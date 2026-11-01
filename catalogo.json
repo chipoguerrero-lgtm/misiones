@@ -1,0 +1,6 @@
+[
+ {"id":"comite-tf","titulo":"El comité de dictamen","asignatura":"Habilidades del Pensamiento","programa":"Licenciatura en Terapia Física","grupos":"LTF 06","caso":"La rodilla a la semana 8"},
+ {"id":"comite-irc","titulo":"El comité de dictamen","asignatura":"Habilidades del Pensamiento","programa":"Ingeniería en Robótica Computacional","grupos":"IRC MPR 02","caso":"El sensor que se detiene solo"},
+ {"id":"comite-isa","titulo":"El comité de dictamen","asignatura":"Habilidades del Pensamiento","programa":"Ingeniería en Sistemas Automotrices","grupos":"ISA SA 04","caso":"Once de cuarenta mil"},
+ {"id":"dosis-100000","titulo":"Las 100 000 dosis","asignatura":"Ética Profesional","programa":"Todas las carreras","grupos":"","caso":"Práctica de ética utilitaria"}
+]

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Misiones exprés · UPSRJ</title>
+<meta name="description" content="Misiones exprés de 45 minutos con agentes de IA para pensamiento crítico y ética. Lic. Cristóbal Guerrero Hernández, UPSRJ.">
+<link rel="stylesheet" href="motor/mision.css">
+<style>
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:16px 0 34px}
+.card{display:block;background:var(--card);border-radius:22px;box-shadow:var(--shadow);padding:22px 24px;text-decoration:none;color:var(--ink);border:2px solid transparent}
+.card:hover,.card:focus{border-color:var(--blue)}
+.card .t{font-family:'Kalam',cursive;font-size:28px;line-height:1.15;color:var(--blue)}
+.card .p{font-weight:700;margin-top:6px}
+.card .c{color:var(--muted);font-size:15px;margin-top:4px}
+.as{font-family:'Kalam',cursive;font-size:34px;margin-top:20px}
+body.bv .card{border-color:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="a11y" role="group" aria-label="Opciones de accesibilidad">
+    <button type="button" data-a="bv" aria-pressed="false">Baja visión: letra grande y alto contraste</button>
+  </div>
+  <div class="logos"><img src="assets/logo_upsrj.png" alt="Universidad Politécnica de Santa Rosa Jáuregui"><img src="assets/logo_iehl.png" alt="IEHL · Integral Education for Higher Learning"></div>
+  <div class="eyebrow">Lic. Cristóbal Guerrero Hernández · UPSRJ</div>
+  <h1>Misiones exprés</h1>
+  <p class="lead">Prácticas de 45 minutos en las que primero decides tú y después un agente de IA te interroga. No evalúa qué decidiste, sino si puedes sostener cómo llegaste ahí. Elige la misión que te indicó tu docente.</p>
+</header>
+<main id="lista"><p>Cargando…</p></main>
+</div>
+<footer class="wrap">
+  <div class="foot">
+    <div class="logos"><img src="assets/logo_upsrj.png" alt="Universidad Politécnica de Santa Rosa Jáuregui"><img src="assets/logo_iehl.png" alt="IEHL · Integral Education for Higher Learning"></div>
+    <img class="firma" src="assets/firma_designed_by_chipo.png" alt="Designed and built by Chipo">
+  </div>
+  <p>Todos los casos, cifras y documentos de las misiones son ficticios, construidos para el ejercicio didáctico.</p>
+</footer>
+<script>
+(function () {
+  function get() { try { return JSON.parse(localStorage.getItem('misiones-a11y') || '{}'); } catch (e) { return {}; } }
+  var st = get(), b = document.querySelector('[data-a="bv"]');
+  if (st.bv) { document.body.classList.add('bv'); b.setAttribute('aria-pressed', 'true'); }
+  b.addEventListener('click', function () {
+    var on = !document.body.classList.contains('bv'); document.body.classList.toggle('bv', on); b.setAttribute('aria-pressed', on);
+    st.bv = on; try { localStorage.setItem('misiones-a11y', JSON.stringify(st)); } catch (e) {}
+  });
+  fetch('catalogo.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (list) {
+    var by = {};
+    list.forEach(function (m) { (by[m.asignatura] = by[m.asignatura] || []).push(m); });
+    var html = '';
+    Object.keys(by).forEach(function (a) {
+      html += '<h2 class="as">' + a + '</h2><div class="grid">' + by[a].map(function (m) {
+        return '<a class="card" href="' + m.id + '/"><div class="t">' + m.titulo + '</div><div class="p">' + m.programa + (m.grupos ? ' · ' + m.grupos : '') + '</div><div class="c">' + m.caso + '</div></a>';
+      }).join('') + '</div>';
+    });
+    document.getElementById('lista').innerHTML = html;
+  }).catch(function () { document.getElementById('lista').innerHTML = '<p>No se pudo cargar la lista. Recarga la página.</p>'; });
+})();
+</script>
+</body>
+</html>

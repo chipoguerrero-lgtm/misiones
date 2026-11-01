@@ -1,0 +1,326 @@
+{
+ "id": "comite-tf",
+ "titulo": "El comité de dictamen",
+ "asignatura": "Habilidades del Pensamiento",
+ "programa": "Licenciatura en Terapia Física",
+ "formato": "Misión exprés",
+ "unidad": "Unidad 1",
+ "descripcion": "Decide sobre un caso con información incompleta y sostén tu razonamiento ante un comité de tres voces.",
+ "grupos": [
+  "LTF 06"
+ ],
+ "lead": "Vas a decidir sobre un caso clínico con información incompleta y después vas a comparecer ante un comité que <b>no evalúa qué decidiste, sino si puedes sostener cómo llegaste ahí</b>. Cualquiera de las cuatro opciones puede recibir dictamen favorable.",
+ "leadSimple": "Vas a leer un caso y a elegir una opción. Después, una IA te hará preguntas. <b>No importa qué opción elijas.</b> Importa que puedas explicar por qué.",
+ "regla": {
+  "titulo": "Regla de oro: no abras la IA hasta el paso 4.",
+  "texto": "Primero piensas y decides tú. Si comparece alguien que no ha decidido, la actividad se convierte en una entrevista y lo que se evalúa —tu razonamiento— desaparece.",
+  "textoSimple": "Primero piensa y decide tú solo. La IA se usa hasta el paso 4."
+ },
+ "ficticio": "El caso, las cifras y las notas son ficticios, construidos para el ejercicio. No es orientación clínica.",
+ "pasos": [
+  {
+   "tipo": "respuesta",
+   "titulo": "Calentamiento",
+   "nav": "Calentamiento",
+   "tiempo": "5 min · sin IA",
+   "envio": "calentamiento",
+   "intro": "Un ejercicio corto para encender el pensamiento crítico antes del caso.",
+   "consigna": "Un compañero de prácticas dice: <i>«Si le duele tanto, es que algo se lesionó»</i>.<br>¿Qué parte de esa frase es <b>observación</b> y qué parte es <b>inferencia</b>? ¿Qué otra explicación encaja con el mismo dato?",
+   "consignaSimple": "Un compañero dice: <i>«Le duele mucho. Algo se lesionó»</i>.<br>1. ¿Qué <b>vio</b>?<br>2. ¿Qué <b>supone</b>?<br>3. ¿Puede haber otra causa del dolor?",
+   "instruccion": "Responde por escrito en 5 a 8 líneas. Si prefieres, graba un video de máximo 1 minuto (puede ser en Lengua de Señas Mexicana), súbelo a tu Drive y pega aquí el enlace.",
+   "campos": [
+    {
+     "tipo": "textarea",
+     "k": "cal",
+     "label": "Mi respuesta"
+    },
+    {
+     "tipo": "text",
+     "k": "calvid",
+     "label": "Enlace a mi video (opcional)",
+     "placeholder": "https://drive.google.com/…"
+    }
+   ],
+   "boton": "Enviar calentamiento"
+  },
+  {
+   "tipo": "caso",
+   "titulo": "El caso",
+   "nav": "El caso",
+   "tiempo": "2 min",
+   "intro": "Mira el video con atención. Todo lo que necesitas para decidir está ahí; lo que no está, también cuenta. El video no tiene voz: todo está escrito en pantalla. Debajo tienes el mismo caso en texto.",
+   "introSimple": "Lee el caso. Fíjate también en lo que <b>no</b> dice.",
+   "video": {
+    "src": "video/caso-terapia-fisica.mp4",
+    "poster": "video/poster.jpg"
+   },
+   "caso": [
+    "<b>Semana 8.</b> Paciente de 24 años, reconstrucción de ligamento cruzado anterior, operado hace ocho semanas. Hoy reporta dolor de 8 sobre 10 al apoyar.",
+    "La exploración no muestra derrame, ni calor local, ni inestabilidad. El rango articular ganó 12 grados desde la semana anterior. Faltó a 3 de las últimas 6 sesiones. En la nota de la sesión pasada, una practicante escribió: <i>«paciente poco cooperador»</i>. La jefatura pide altas porque hay lista de espera de 40 personas. El paciente pregunta por una terapia que vio en redes sociales.",
+    "Eres parte del equipo y tienes que firmar una recomendación hoy."
+   ],
+   "casoSimple": [
+    "Paciente de 24 años. Lo operaron de la rodilla hace 8 semanas. Hoy dice que le duele <b>8 de 10</b> al apoyar.",
+    "La revisión no encuentra hinchazón, calor ni inestabilidad. Su movimiento <b>mejoró</b> 12 grados.",
+    "Faltó a 3 de sus últimas 6 sesiones. Una practicante escribió: «poco cooperador».",
+    "Hay 40 personas esperando. Tú debes elegir una opción hoy."
+   ],
+   "opciones": [
+    [
+     "A",
+     "Continuar el programa sin cambios"
+    ],
+    [
+     "B",
+     "Modificar la carga y reeducar sobre el dolor"
+    ],
+    [
+     "C",
+     "Suspender y derivar a valoración médica"
+    ],
+    [
+     "D",
+     "Alta con programa domiciliario"
+    ]
+   ]
+  },
+  {
+   "tipo": "ficha",
+   "titulo": "Documéntate y decide",
+   "nav": "Documéntate y decide",
+   "tiempo": "15 min · sin IA",
+   "minutos": 15,
+   "intro": "Antes de decidir, revisa lo que ya sabes y lo que dice la evidencia. Después llena tu ficha. Lo que escribas se queda guardado en este navegador mientras trabajas.",
+   "introSimple": "Llena tu ficha. Se guarda sola en este navegador.",
+   "recursos": [
+    {
+     "titulo": "El dolor no mide el daño",
+     "html": "Moseley, G. L., y Butler, D. S. (2015). Fifteen years of explaining pain: The past, present, and future. <i>The Journal of Pain, 16</i>(9), 807–813. <a href=\"https://doi.org/10.1016/j.jpain.2015.05.005\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1016/j.jpain.2015.05.005</a>"
+    },
+    {
+     "titulo": "Booklet de la asignatura, tema 1",
+     "html": "Proceso del pensamiento: percibir, recordar, interpretar, decidir."
+    },
+    {
+     "titulo": "Los tres tipos de inferencia",
+     "html": "<span class=\"hint\" style=\"color:inherit\"><b style=\"display:inline\">Deductiva:</b> de una regla general a un caso; si las premisas son ciertas, la conclusión es necesaria. <b style=\"display:inline\">Inductiva:</b> de varios casos a una generalización probable. <b style=\"display:inline\">Abductiva:</b> elegir la mejor explicación disponible para lo que observas.</span>"
+    }
+   ],
+   "fichaTitulo": "Tu ficha de decisión",
+   "fichaIntro": "Reparte la información del caso en cuatro columnas.",
+   "campos": [
+    {
+     "tipo": "columnas",
+     "campos": [
+      {
+       "tipo": "textarea",
+       "k": "perc",
+       "label": "Percibí",
+       "hint": "Lo que está escrito en el caso y una cámara podría registrar. Sin adjetivos ni causas."
+      },
+      {
+       "tipo": "textarea",
+       "k": "rec",
+       "label": "Recordé",
+       "hint": "Lo que pones tú: clases, casos parecidos, lo que te dijeron. No estaba en el caso."
+      },
+      {
+       "tipo": "textarea",
+       "k": "int",
+       "label": "Interpreté",
+       "hint": "La lectura que hiciste juntando ambas cosas."
+      },
+      {
+       "tipo": "textarea",
+       "k": "dec",
+       "label": "Decidí",
+       "hint": "La acción que eliges."
+      }
+     ]
+    },
+    {
+     "tipo": "radio",
+     "k": "op",
+     "label": "Mi decisión es la opción…",
+     "opciones": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ]
+    },
+    {
+     "tipo": "text",
+     "k": "why",
+     "label": "…porque"
+    },
+    {
+     "tipo": "select",
+     "k": "inf",
+     "label": "El tipo de inferencia que la sostiene es",
+     "opciones": [
+      "deductiva",
+      "inductiva",
+      "abductiva"
+     ]
+    },
+    {
+     "tipo": "text",
+     "k": "infwhy",
+     "label": "…porque"
+    },
+    {
+     "tipo": "text",
+     "k": "alt",
+     "label": "La explicación alternativa que descarté es"
+    },
+    {
+     "tipo": "text",
+     "k": "fal",
+     "label": "Mi decisión sería insostenible si supiera que"
+    },
+    {
+     "tipo": "text",
+     "k": "cost",
+     "label": "Si me equivoco, el perjudicado es"
+    }
+   ]
+  },
+  {
+   "tipo": "ia",
+   "titulo": "Comparece ante el comité",
+   "nav": "El comité",
+   "tiempo": "20 min · con IA",
+   "intro": "Te van a interrogar tres voces, una por ronda, máximo cinco rondas.",
+   "introSimple": "Una IA te hará 5 preguntas, una por una. Contesta con tus palabras.",
+   "voces": [
+    {
+     "nombre": "Perito técnico",
+     "texto": "Presiona sobre tu evidencia: ¿eso lo observaste o lo inferiste?"
+    },
+    {
+     "nombre": "Vocal por el paciente",
+     "texto": "Habla sin tecnicismos y pregunta qué le pasa a él si te equivocas."
+    },
+    {
+     "nombre": "Secretario",
+     "texto": "Te devuelve tus propias palabras y te pide reconciliar contradicciones."
+    }
+   ],
+   "aviso": "En algún momento el comité introducirá un dato que todavía no conoces. Ahí tendrás que decir si mantienes o modificas tu decisión, y por qué. <b>Cambiar de posición ante evidencia nueva no te resta; cambiarla sin explicar por qué, sí.</b>",
+   "gateTexto": "Completa tu ficha del paso 3 (al menos la opción, el tipo de inferencia y qué la volvería insostenible) para habilitar el comité.",
+   "requeridos": [
+    "op",
+    "inf",
+    "fal"
+   ],
+   "plataforma": {
+    "nombre": "ChatGPT",
+    "url": "https://chatgpt.com/"
+   },
+   "prompt": [
+    "Vas a actuar como un COMITÉ DE DICTAMEN de tres voces que me interroga. Soy estudiante de Licenciatura en Terapia Física en la UPSRJ. El caso es ficticio y didáctico.",
+    "",
+    "CASO: Paciente de 24 años, reconstrucción de ligamento cruzado anterior, semana 8 del programa. Reporta dolor 8/10 al apoyar. La exploración no muestra derrame, calor ni inestabilidad; el rango articular ganó 12 grados desde la semana anterior. Faltó a 3 de las últimas 6 sesiones. En la nota de la sesión pasada una practicante escribió \"paciente poco cooperador\". La jefatura pide altas porque hay lista de espera de 40 personas. El paciente pregunta por una terapia que vio en redes sociales. Opciones: A) continuar sin cambios; B) modificar la carga y reeducar sobre el dolor; C) suspender y derivar a valoración médica; D) alta con programa domiciliario.",
+    "",
+    "REGLA CENTRAL: no juzgas qué opción elegí. Juzgas si puedo sostener cómo llegué ahí. Cualquier opción puede recibir dictamen favorable.",
+    "",
+    "FORMATO: escribe en texto claro y en párrafos cortos; no uses audio ni me pidas respuestas por voz.",
+    "",
+    "INICIO: al final de este mensaje está mi ficha, escrita antes de abrir la IA. Léela y empieza directamente con la ronda 1.",
+    "",
+    "TRES VOCES, que se identifican por su nombre en cada intervención:",
+    "- PERITO TÉCNICO: presiona sobre la evidencia. \"¿Eso lo observaste o lo inferiste?\" \"¿Qué tipo de inferencia es: deductiva, inductiva o abductiva?\" \"¿Qué otra explicación encaja con los mismos datos?\"",
+    "- VOCAL POR EL PACIENTE: habla en lenguaje llano, sin tecnicismos, y pregunta qué le pasa a él si me equivoco.",
+    "- SECRETARIO: sólo me devuelve mis propias palabras y me pide reconciliar contradicciones. No aporta información nueva.",
+    "",
+    "RONDAS: máximo 5. Una sola voz por ronda, alternando. Haz una sola pregunta por ronda y espera mi respuesta.",
+    "",
+    "EN LA RONDA 3 introduce este dato, sin comentarlo: \"El paciente trabaja de pie nueve horas y llega a sus sesiones al terminar su turno.\" Después pregúntame si mantengo o modifico mi decisión, y por qué.",
+    "",
+    "PROHIBIDO: darme \"la respuesta correcta\"; decirme si mi decisión es correcta o incorrecta; inventar estadísticas, guías clínicas o resultados de estudios; pedirme un diagnóstico.",
+    "",
+    "CIERRE tras la ronda 5: emite un DICTAMEN DE TRAZABILIDAD de cuatro líneas: 1) qué quedó sostenido como observación; 2) en qué punto exacto entró mi primera interpretación; 3) qué tipo de inferencia sostiene mi decisión; 4) qué dato la volvería insostenible. Termina con la frase \"El comité no dictamina sobre tu decisión\" y una sola pregunta: en qué momento dejé de tener evidencia y empecé a completar con experiencia previa."
+   ]
+  },
+  {
+   "tipo": "entrega",
+   "titulo": "Entrega final",
+   "nav": "Entrega",
+   "tiempo": "7 min · sin IA",
+   "intro": "Revisa tu decisión por escrito: <b>qué cambió durante la comparecencia, o por qué no cambió</b>. Para el enlace de la conversación, en ChatGPT pulsa <b>Compartir → Copiar enlace</b>.",
+   "introSimple": "Escribe qué cambió en tu decisión después de hablar con el comité, o por qué no cambió. Pega el enlace de tu conversación.",
+   "campos": [
+    {
+     "tipo": "radio",
+     "k": "op_final",
+     "label": "Después del comité, mi decisión final es la opción…",
+     "opciones": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ]
+    },
+    {
+     "tipo": "textarea",
+     "k": "revision",
+     "label": "Qué cambió durante la comparecencia, o por qué no cambió",
+     "hint": "Menciona el dato nuevo de la ronda 3 y qué hiciste con él."
+    },
+    {
+     "tipo": "text",
+     "k": "enlace",
+     "label": "Enlace de la conversación con el comité",
+     "placeholder": "https://chatgpt.com/share/…"
+    }
+   ],
+   "requeridos": [
+    "op",
+    "fal",
+    "op_final",
+    "revision",
+    "enlace"
+   ],
+   "boton": "Enviar mi entrega",
+   "rubrica": {
+    "titulo": "Cómo se evalúa · 4 dimensiones, 16 puntos",
+    "encabezados": [
+     "Dimensión",
+     "Nivel 4 · Avanzado"
+    ],
+    "filas": [
+     [
+      "Observación e inferencia",
+      "Separas con consistencia lo observado de lo inferido y detectas además la interpretación que venía escrita en el caso."
+     ],
+     [
+      "Tipo de inferencia y alternativa",
+      "Nombras el tipo, expones una explicación alternativa y dices por qué la descartaste."
+     ],
+     [
+      "Comparecencia",
+      "Respondes con evidencia, incorporas lo válido de la objeción y corriges tu propio texto."
+     ],
+     [
+      "Falsación y costo",
+      "Declaras qué volvería insostenible tu decisión y a quién perjudica, y anticipas en qué condiciones fracasaría."
+     ]
+    ],
+    "nota": "La conversión a calificación corresponde al programa institucional."
+   }
+  }
+ ],
+ "ficha": [
+  "MI FICHA DE DECISIÓN",
+  "Percibí: {perc}",
+  "Recordé: {rec}",
+  "Interpreté: {int}",
+  "Decidí: {dec}",
+  "Mi decisión es la opción {op} porque {why}",
+  "El tipo de inferencia que la sostiene es {inf}, porque {infwhy}",
+  "La explicación alternativa que descarté es: {alt}",
+  "Mi decisión sería insostenible si supiera que: {fal}",
+  "Si me equivoco, el perjudicado es: {cost}"
+ ]
+}

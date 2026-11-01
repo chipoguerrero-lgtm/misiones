@@ -1,0 +1,322 @@
+{
+ "id": "comite-isa",
+ "titulo": "El comité de dictamen",
+ "asignatura": "Habilidades del Pensamiento",
+ "programa": "Ingeniería en Sistemas Automotrices",
+ "formato": "Misión exprés",
+ "unidad": "Unidad 1",
+ "descripcion": "Decide sobre un caso con información incompleta y sostén tu razonamiento ante un comité de tres voces.",
+ "grupos": [
+  "ISA SA 04"
+ ],
+ "lead": "Vas a decidir sobre un caso de ingeniería con información incompleta y después vas a comparecer ante un comité que <b>no evalúa qué decidiste, sino si puedes sostener cómo llegaste ahí</b>. Cualquiera de las cuatro opciones puede recibir dictamen favorable.",
+ "leadSimple": "Vas a leer un caso y a elegir una opción. Después, una IA te hará preguntas. <b>No importa qué opción elijas.</b> Importa que puedas explicar por qué.",
+ "regla": {
+  "titulo": "Regla de oro: no abras la IA hasta el paso 4.",
+  "texto": "Primero piensas y decides tú. Si comparece alguien que no ha decidido, la actividad se convierte en una entrevista y lo que se evalúa —tu razonamiento— desaparece.",
+  "textoSimple": "Primero piensa y decide tú solo. La IA se usa hasta el paso 4."
+ },
+ "ficticio": "El caso, las cifras y los reportes son ficticios, construidos para el ejercicio. No se citan normas ni regulaciones reales.",
+ "pasos": [
+  {
+   "tipo": "respuesta",
+   "titulo": "Calentamiento",
+   "nav": "Calentamiento",
+   "tiempo": "5 min · sin IA",
+   "envio": "calentamiento",
+   "intro": "Un ejercicio corto para encender el pensamiento crítico antes del caso.",
+   "consigna": "Un jefe de taller dice: <i>«Si en el taller no se reproduce, es que no hay falla»</i>.<br>¿Qué parte de esa frase es <b>observación</b> y qué parte es <b>inferencia</b>? ¿Qué otra explicación encaja con el mismo dato?",
+   "consignaSimple": "Un jefe de taller dice: <i>«No pudimos repetir la falla. Entonces no hay falla»</i>.<br>1. ¿Qué <b>vio</b>?<br>2. ¿Qué <b>supone</b>?<br>3. ¿Puede haber falla aunque no se repita en el taller?",
+   "instruccion": "Responde por escrito en 5 a 8 líneas. Si prefieres, graba un video de máximo 1 minuto (puede ser en Lengua de Señas Mexicana), súbelo a tu Drive y pega aquí el enlace.",
+   "campos": [
+    {
+     "tipo": "textarea",
+     "k": "cal",
+     "label": "Mi respuesta"
+    },
+    {
+     "tipo": "text",
+     "k": "calvid",
+     "label": "Enlace a mi video (opcional)",
+     "placeholder": "https://drive.google.com/…"
+    }
+   ],
+   "boton": "Enviar calentamiento"
+  },
+  {
+   "tipo": "caso",
+   "titulo": "El caso",
+   "nav": "El caso",
+   "tiempo": "2 min",
+   "intro": "Lee el caso con atención. Todo lo que necesitas para decidir está ahí; lo que no está, también cuenta.",
+   "introSimple": "Lee el caso. Fíjate también en lo que <b>no</b> dice.",
+   "caso": [
+    "<b>Once de cuarenta mil.</b> Once usuarios reportan que el frenado asistido <i>«se siente vacío»</i> en un lote de 40 000 unidades. La falla no es reproducible en taller.",
+    "Los once reportes provienen de tres estados de clima frío. Un proveedor cambió el lote de sellos del cilindro maestro en el cuarto mes de producción. No hay personas lesionadas. Un llamado a revisión es costoso y afecta la reputación; omitirlo tiene consecuencias legales. Ingeniería propone esperar más datos.",
+    "Eres parte del comité técnico y tienes que firmar una recomendación hoy."
+   ],
+   "casoSimple": [
+    "<b>11 personas</b> dicen que el freno «se siente vacío». Hay 40 000 vehículos de ese lote.",
+    "En el taller <b>no</b> pudieron repetir la falla.",
+    "Los 11 reportes vienen de lugares con clima frío. A mitad de la producción, un proveedor cambió unas piezas del freno.",
+    "Nadie se lastimó. Revisar todos los autos cuesta mucho. Tú debes elegir una opción hoy."
+   ],
+   "opciones": [
+    [
+     "A",
+     "Llamado a revisión total"
+    ],
+    [
+     "B",
+     "Llamado limitado al rango de VIN del proveedor cambiado"
+    ],
+    [
+     "C",
+     "Monitoreo con notificación de servicio a distribuidores"
+    ],
+    [
+     "D",
+     "Esperar más reportes"
+    ]
+   ]
+  },
+  {
+   "tipo": "ficha",
+   "titulo": "Documéntate y decide",
+   "nav": "Documéntate y decide",
+   "tiempo": "15 min · sin IA",
+   "minutos": 15,
+   "intro": "Antes de decidir, revisa lo que ya sabes y lo que dice la evidencia. Después llena tu ficha. Lo que escribas se queda guardado en este navegador mientras trabajas.",
+   "introSimple": "Llena tu ficha. Se guarda sola en este navegador.",
+   "recursos": [
+    {
+     "titulo": "Ausencia de evidencia no es evidencia de ausencia",
+     "html": "Que una falla no se reproduzca en taller no demuestra que no exista: solo dice que las condiciones del taller no la provocaron. Pregúntate qué condiciones del uso real no están en el taller."
+    },
+    {
+     "titulo": "Booklet de la asignatura, tema 1",
+     "html": "Proceso del pensamiento: percibir, recordar, interpretar, decidir."
+    },
+    {
+     "titulo": "Los tres tipos de inferencia",
+     "html": "<span class=\"hint\" style=\"color:inherit\"><b style=\"display:inline\">Deductiva:</b> de una regla general a un caso; si las premisas son ciertas, la conclusión es necesaria. <b style=\"display:inline\">Inductiva:</b> de varios casos a una generalización probable. <b style=\"display:inline\">Abductiva:</b> elegir la mejor explicación disponible para lo que observas.</span>"
+    }
+   ],
+   "fichaTitulo": "Tu ficha de decisión",
+   "fichaIntro": "Reparte la información del caso en cuatro columnas.",
+   "campos": [
+    {
+     "tipo": "columnas",
+     "campos": [
+      {
+       "tipo": "textarea",
+       "k": "perc",
+       "label": "Percibí",
+       "hint": "Lo que está escrito en el caso y una cámara podría registrar. Sin adjetivos ni causas."
+      },
+      {
+       "tipo": "textarea",
+       "k": "rec",
+       "label": "Recordé",
+       "hint": "Lo que pones tú: clases, casos parecidos, lo que te dijeron. No estaba en el caso."
+      },
+      {
+       "tipo": "textarea",
+       "k": "int",
+       "label": "Interpreté",
+       "hint": "La lectura que hiciste juntando ambas cosas."
+      },
+      {
+       "tipo": "textarea",
+       "k": "dec",
+       "label": "Decidí",
+       "hint": "La acción que eliges."
+      }
+     ]
+    },
+    {
+     "tipo": "radio",
+     "k": "op",
+     "label": "Mi decisión es la opción…",
+     "opciones": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ]
+    },
+    {
+     "tipo": "text",
+     "k": "why",
+     "label": "…porque"
+    },
+    {
+     "tipo": "select",
+     "k": "inf",
+     "label": "El tipo de inferencia que la sostiene es",
+     "opciones": [
+      "deductiva",
+      "inductiva",
+      "abductiva"
+     ]
+    },
+    {
+     "tipo": "text",
+     "k": "infwhy",
+     "label": "…porque"
+    },
+    {
+     "tipo": "text",
+     "k": "alt",
+     "label": "La explicación alternativa que descarté es"
+    },
+    {
+     "tipo": "text",
+     "k": "fal",
+     "label": "Mi decisión sería insostenible si supiera que"
+    },
+    {
+     "tipo": "text",
+     "k": "cost",
+     "label": "Si me equivoco, el perjudicado es"
+    }
+   ]
+  },
+  {
+   "tipo": "ia",
+   "titulo": "Comparece ante el comité",
+   "nav": "El comité",
+   "tiempo": "20 min · con IA",
+   "intro": "Te van a interrogar tres voces, una por ronda, máximo cinco rondas.",
+   "introSimple": "Una IA te hará 5 preguntas, una por una. Contesta con tus palabras.",
+   "voces": [
+    {
+     "nombre": "Perito técnico",
+     "texto": "Presiona sobre tu evidencia: ¿eso lo observaste o lo inferiste?"
+    },
+    {
+     "nombre": "Vocal por el usuario",
+     "texto": "Habla sin tecnicismos y pregunta qué le pasa a él, que maneja el vehículo, si te equivocas."
+    },
+    {
+     "nombre": "Secretario",
+     "texto": "Te devuelve tus propias palabras y te pide reconciliar contradicciones."
+    }
+   ],
+   "aviso": "En algún momento el comité introducirá un dato que todavía no conoces. Ahí tendrás que decir si mantienes o modificas tu decisión, y por qué. <b>Cambiar de posición ante evidencia nueva no te resta; cambiarla sin explicar por qué, sí.</b>",
+   "gateTexto": "Completa tu ficha del paso 3 (al menos la opción, el tipo de inferencia y qué la volvería insostenible) para habilitar el comité.",
+   "requeridos": [
+    "op",
+    "inf",
+    "fal"
+   ],
+   "plataforma": {
+    "nombre": "ChatGPT",
+    "url": "https://chatgpt.com/"
+   },
+   "prompt": [
+    "Vas a actuar como un COMITÉ DE DICTAMEN de tres voces que me interroga. Soy estudiante de Ingeniería en Sistemas Automotrices en la UPSRJ. El caso es ficticio y didáctico.",
+    "",
+    "CASO: Once reportes de usuarios describen que el frenado asistido \"se siente vacío\" en un lote de 40 000 unidades. No es reproducible en taller. Los once reportes provienen de tres estados de clima frío. Un proveedor cambió el lote de sellos del cilindro maestro en el cuarto mes de producción. No hay lesionados. Un llamado a revisión es costoso y afecta la reputación; omitirlo tiene consecuencias legales. Ingeniería propone esperar más datos. Opciones: A) llamado a revisión total; B) llamado limitado al rango de VIN del proveedor cambiado; C) monitoreo con notificación de servicio a distribuidores; D) esperar más reportes.",
+    "",
+    "REGLA CENTRAL: no juzgas qué opción elegí. Juzgas si puedo sostener cómo llegué ahí. Cualquier opción puede recibir dictamen favorable.",
+    "",
+    "FORMATO: escribe en texto claro y en párrafos cortos; no uses audio ni me pidas respuestas por voz.",
+    "",
+    "INICIO: al final de este mensaje está mi ficha, escrita antes de abrir la IA. Léela y empieza directamente con la ronda 1.",
+    "",
+    "TRES VOCES, que se identifican por su nombre en cada intervención:",
+    "- PERITO TÉCNICO: presiona sobre la evidencia. \"¿Eso lo observaste o lo inferiste?\" \"¿Qué tipo de inferencia es: deductiva, inductiva o abductiva?\" \"¿Qué otra explicación encaja con los mismos datos?\"",
+    "- VOCAL POR EL USUARIO DEL VEHÍCULO: habla en lenguaje llano, sin tecnicismos, y pregunta qué le pasa a él si me equivoco.",
+    "- SECRETARIO: sólo me devuelve mis propias palabras y me pide reconciliar contradicciones. No aporta información nueva.",
+    "",
+    "RONDAS: máximo 5. Una sola voz por ronda, alternando. Haz una sola pregunta por ronda y espera mi respuesta.",
+    "",
+    "EN LA RONDA 3 introduce este dato, sin comentarlo: \"De los once reportes, ocho corresponden a vehículos fabricados fuera del rango del proveedor que cambió.\" Después pregúntame si mantengo o modifico mi decisión, y por qué.",
+    "",
+    "PROHIBIDO: darme \"la respuesta correcta\"; decirme si mi decisión es correcta o incorrecta; inventar normas, regulaciones ni estadísticas presentadas como reales.",
+    "",
+    "CIERRE tras la ronda 5: emite un DICTAMEN DE TRAZABILIDAD de cuatro líneas: 1) qué quedó sostenido como observación; 2) en qué punto exacto entró mi primera interpretación; 3) qué tipo de inferencia sostiene mi decisión; 4) qué dato la volvería insostenible. Termina con la frase \"El comité no dictamina sobre tu decisión\" y una sola pregunta: en qué momento dejé de tener evidencia y empecé a completar con experiencia previa."
+   ]
+  },
+  {
+   "tipo": "entrega",
+   "titulo": "Entrega final",
+   "nav": "Entrega",
+   "tiempo": "7 min · sin IA",
+   "intro": "Revisa tu decisión por escrito: <b>qué cambió durante la comparecencia, o por qué no cambió</b>. Para el enlace de la conversación, en ChatGPT pulsa <b>Compartir → Copiar enlace</b>.",
+   "introSimple": "Escribe qué cambió en tu decisión después de hablar con el comité, o por qué no cambió. Pega el enlace de tu conversación.",
+   "campos": [
+    {
+     "tipo": "radio",
+     "k": "op_final",
+     "label": "Después del comité, mi decisión final es la opción…",
+     "opciones": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ]
+    },
+    {
+     "tipo": "textarea",
+     "k": "revision",
+     "label": "Qué cambió durante la comparecencia, o por qué no cambió",
+     "hint": "Menciona el dato nuevo de la ronda 3 y qué hiciste con él."
+    },
+    {
+     "tipo": "text",
+     "k": "enlace",
+     "label": "Enlace de la conversación con el comité",
+     "placeholder": "https://chatgpt.com/share/…"
+    }
+   ],
+   "requeridos": [
+    "op",
+    "fal",
+    "op_final",
+    "revision",
+    "enlace"
+   ],
+   "boton": "Enviar mi entrega",
+   "rubrica": {
+    "titulo": "Cómo se evalúa · 4 dimensiones, 16 puntos",
+    "encabezados": [
+     "Dimensión",
+     "Nivel 4 · Avanzado"
+    ],
+    "filas": [
+     [
+      "Observación e inferencia",
+      "Distingues además correlación de causa en las dos hipótesis del caso (clima frío y cambio de proveedor)."
+     ],
+     [
+      "Tipo de inferencia y alternativa",
+      "Nombras el tipo, expones una explicación alternativa y dices por qué la descartaste."
+     ],
+     [
+      "Comparecencia",
+      "Respondes con evidencia, incorporas lo válido de la objeción y corriges tu propio texto."
+     ],
+     [
+      "Falsación y costo",
+      "Declaras qué volvería insostenible tu decisión y a quién perjudica, y anticipas en qué condiciones fracasaría."
+     ]
+    ],
+    "nota": "La conversión a calificación corresponde al programa institucional."
+   }
+  }
+ ],
+ "ficha": [
+  "MI FICHA DE DECISIÓN",
+  "Percibí: {perc}",
+  "Recordé: {rec}",
+  "Interpreté: {int}",
+  "Decidí: {dec}",
+  "Mi decisión es la opción {op} porque {why}",
+  "El tipo de inferencia que la sostiene es {inf}, porque {infwhy}",
+  "La explicación alternativa que descarté es: {alt}",
+  "Mi decisión sería insostenible si supiera que: {fal}",
+  "Si me equivoco, el perjudicado es: {cost}"
+ ]
+}

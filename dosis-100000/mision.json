@@ -1,0 +1,237 @@
+{
+ "id": "dosis-100000",
+ "titulo": "Las 100 000 dosis",
+ "asignatura": "Ética Profesional",
+ "programa": "",
+ "formato": "Misión exprés · práctica de ética utilitaria",
+ "unidad": "Utilitarismo",
+ "descripcion": "Reparte 100 000 dosis con un criterio utilitarista explícito y sostenlo ante un adversario intelectual.",
+ "grupos": [
+  "LTF 06",
+  "IRC MPR 02",
+  "ISA SA 04",
+  "Otro grupo"
+ ],
+ "lead": "Vas a repartir 100 000 dosis entre cinco grupos con una sola instrucción: <b>maximizar el bienestar y minimizar el daño</b>. Nadie dijo cómo se mide el bienestar. Esa es la pregunta de hoy.",
+ "leadSimple": "Vas a repartir 100 000 vacunas entre 5 grupos. Debes elegir <b>una regla</b> para decidir y decir <b>a quién perjudicas</b>.",
+ "regla": {
+  "titulo": "Regla de oro: decide tú antes de abrir la IA.",
+  "texto": "Si abres la IA antes de haber elegido tu criterio y tu reparto, la actividad se convierte en una entrevista y desaparece lo que se evalúa: tu criterio, no el de la IA.",
+  "textoSimple": "Primero decide tú solo. La IA se usa hasta el paso 3."
+ },
+ "ficticio": "Escenario, cifras, eficacias y modelos: ficticios, construidos para el ejercicio didáctico. No hay respuesta correcta y la calificación no depende de a quién elijas proteger.",
+ "pasos": [
+  {
+   "tipo": "caso",
+   "titulo": "El caso",
+   "nav": "El caso",
+   "tiempo": "5 min",
+   "intro": "",
+   "caso": [
+    "<b>Región de Altamar.</b> Un virus letal circula entre 1 200 000 habitantes. Llegaron 100 000 dosis y no habrá más en cinco meses. Eres parte del comité que decide quién las recibe, y ese documento se ejecuta tal como se firme.",
+    "La única instrucción: <i>maximizar el bienestar y minimizar el daño.</i> Nadie dijo cómo se mide el bienestar."
+   ],
+   "casoSimple": [
+    "Hay un virus peligroso en una región con <b>1 200 000</b> personas.",
+    "Llegaron <b>100 000</b> vacunas. No habrá más en 5 meses.",
+    "Tú decides quién las recibe. La regla es: hacer el mayor bien y el menor daño."
+   ],
+   "tabla": "<table><tr><th>Grupo</th><th class=\"num\">Personas</th><th class=\"num\">Letalidad</th><th class=\"num\">Contactos diarios</th></tr>\n<tr><td>65 años o más</td><td class=\"num\">156 000</td><td class=\"num\">8.4 %</td><td class=\"num\">4</td></tr>\n<tr><td>Personal de salud</td><td class=\"num\">12 000</td><td class=\"num\">1.1 %</td><td class=\"num\">38</td></tr>\n<tr><td>Trabajadores esenciales</td><td class=\"num\">88 000</td><td class=\"num\">0.9 %</td><td class=\"num\">31</td></tr>\n<tr><td>Adolescentes 5–17</td><td class=\"num\">244 000</td><td class=\"num\">0.1 %</td><td class=\"num\">26</td></tr>\n<tr><td>Comunidades rurales</td><td class=\"num\">61 000</td><td class=\"num\">5.7 %</td><td class=\"num\">7</td></tr></table>",
+   "nota": "900 camas de cuidados críticos · proyección de 2 400 casos críticos simultáneos · los adolescentes son el principal vector de transmisión · las comunidades rurales están a más de 3 h del hospital más cercano."
+  },
+  {
+   "tipo": "ficha",
+   "titulo": "Decide solo",
+   "nav": "Decide",
+   "tiempo": "7 min · sin IA",
+   "minutos": 7,
+   "intro": "Primero eliges con qué regla vas a medir el bienestar; después repartes. Lo que escribas se queda guardado en este navegador.",
+   "introSimple": "1. Elige tu regla. 2. Reparte las vacunas. 3. Di a quién perjudicas.",
+   "recursosTitulo": "Las tres lecturas del bienestar",
+   "recursos": [
+    {
+     "titulo": "1 · Vidas salvadas",
+     "html": "Maximiza el número de muertes evitadas."
+    },
+    {
+     "titulo": "2 · Años de vida salvados",
+     "html": "Maximiza los años de vida ganados."
+    },
+    {
+     "titulo": "3 · Daño total evitado",
+     "html": "Maximiza la reducción de contagios y de colapso hospitalario."
+    }
+   ],
+   "fichaTitulo": "Tu decisión",
+   "campos": [
+    {
+     "tipo": "radio",
+     "k": "criterio",
+     "label": "Para mí, «maximizar el bienestar» significa…",
+     "opciones": [
+      "Vidas salvadas",
+      "Años de vida salvados",
+      "Daño total evitado"
+     ]
+    },
+    {
+     "tipo": "text",
+     "k": "fuera",
+     "label": "Lo que mi criterio deja fuera de la medición es",
+     "hint": "Todo criterio mide algo y deja de medir otra cosa."
+    },
+    {
+     "tipo": "reparto",
+     "k": "reparto",
+     "label": "Mi reparto de las 100 000 dosis",
+     "hint": "Escribe cuántas dosis recibe cada grupo. El total debe ser exactamente 100 000.",
+     "meta": 100000,
+     "filas": [
+      {
+       "k": "d_mayores",
+       "label": "65 años o más"
+      },
+      {
+       "k": "d_salud",
+       "label": "Personal de salud"
+      },
+      {
+       "k": "d_esenciales",
+       "label": "Trabajadores esenciales"
+      },
+      {
+       "k": "d_adolescentes",
+       "label": "Adolescentes 5–17"
+      },
+      {
+       "k": "d_rurales",
+       "label": "Comunidades rurales"
+      }
+     ]
+    },
+    {
+     "tipo": "textarea",
+     "k": "porque",
+     "label": "Por qué este reparto sigue mi criterio"
+    },
+    {
+     "tipo": "textarea",
+     "k": "perjudica",
+     "label": "Con esta decisión perjudico a",
+     "hint": "Nombra al grupo y explica cómo lo perjudicas."
+    }
+   ]
+  },
+  {
+   "tipo": "ia",
+   "titulo": "Debate con el adversario",
+   "nav": "Debate",
+   "tiempo": "20 min · con IA",
+   "intro": "La IA va a sostener la posición contraria a la tuya, con argumentos razonables. Máximo cinco rondas.",
+   "introSimple": "La IA va a pensar distinto que tú. Defiende tu decisión con razones.",
+   "aviso": "A mitad del debate la IA te dará <b>dos datos nuevos</b>. Ahí tendrás que decir si mantienes o modificas tu reparto. <b>Cambiar de opinión con razones vale lo mismo que sostenerla con razones.</b> Si le pides la respuesta correcta y se niega, la actividad está funcionando.",
+   "gateTexto": "Completa el paso 2 (criterio, reparto que sume 100 000 y a quién perjudicas) para habilitar el debate.",
+   "requeridos": [
+    "criterio",
+    "reparto",
+    "perjudica"
+   ],
+   "plataforma": {
+    "nombre": "ChatGPT",
+    "url": "https://chatgpt.com/"
+   },
+   "prompt": [
+    "Actúa como adversario intelectual en un debate de ética utilitaria. Soy estudiante universitario de Ética Profesional.",
+    "",
+    "Caso: soy parte de un comité que debe repartir 100 000 dosis de vacuna entre 1 200 000 habitantes de la Región de Altamar. Los grupos son: adultos de 65 años o más (156 000 personas, letalidad 8.4 %, 4 contactos diarios), personal de salud (12 000, letalidad 1.1 %, 38 contactos), trabajadores esenciales (88 000, letalidad 0.9 %, 31 contactos), adolescentes de 5 a 17 años (244 000, letalidad 0.1 %, 26 contactos, principal vector de transmisión) y comunidades rurales a más de 3 horas del hospital (61 000, letalidad 5.7 %, 7 contactos). Hay 900 camas de cuidados críticos y se proyectan 2 400 casos críticos simultáneos. Todos los datos son ficticios.",
+    "",
+    "FORMATO: escribe en texto claro y en párrafos cortos; no uses audio.",
+    "",
+    "Reglas del debate:",
+    "",
+    "1. Al final de este mensaje está lo que decidí solo, antes de abrir la IA: mi criterio de bienestar, mi reparto y a quién perjudico. Léelo y empieza el debate cuestionándolo. Si mi reparto no es coherente con mi criterio, señálalo.",
+    "",
+    "2. Sostén la posición contraria a la mía con argumentos razonables, nunca caricaturas. No me digas \"está mal\": pregúntame por mi evidencia y por mis supuestos. Haz una sola intervención por ronda y espera mi respuesta.",
+    "",
+    "3. A la mitad del debate revélame estos dos datos: que el esquema completo son dos dosis (es decir, 50 000 personas bien protegidas al 82 %, o 100 000 personas protegidas a la mitad, al 41 % y con caída a los cuatro meses), y que en personas de 75 años o más la protección cae a 47 % por respuesta inmune reducida.",
+    "",
+    "4. Después de revelarlos, pregúntame si mantengo o modifico mi posición. Cambiar de opinión con razones vale lo mismo que sostenerla con razones.",
+    "",
+    "5. No me des la respuesta correcta: no existe, y no insinúes que la hay.",
+    "",
+    "6. Máximo 5 rondas, unos 20 minutos. Cierra preguntándome en qué momento el criterio utilitarista dejó de ayudarme a decidir y qué lo sustituyó."
+   ]
+  },
+  {
+   "tipo": "entrega",
+   "titulo": "Revisión final",
+   "nav": "Entrega",
+   "tiempo": "8 min · sin IA",
+   "intro": "Cierra por escrito, sin IA. Para el enlace de la conversación, en ChatGPT pulsa <b>Compartir → Copiar enlace</b>.",
+   "introSimple": "Escribe qué cambió después del debate y pega el enlace de tu conversación.",
+   "campos": [
+    {
+     "tipo": "textarea",
+     "k": "revision",
+     "label": "Qué cambió durante el debate y por qué, o por qué no cambió",
+     "hint": "Menciona los dos datos nuevos y qué hiciste con ellos."
+    },
+    {
+     "tipo": "textarea",
+     "k": "limite",
+     "label": "Un punto en que el utilitarismo dejó de resolverme el problema",
+     "hint": "¿Qué usaste en su lugar para decidir?"
+    },
+    {
+     "tipo": "text",
+     "k": "enlace",
+     "label": "Enlace de la conversación",
+     "placeholder": "https://chatgpt.com/share/…"
+    }
+   ],
+   "requeridos": [
+    "criterio",
+    "reparto",
+    "perjudica",
+    "revision",
+    "limite",
+    "enlace"
+   ],
+   "boton": "Enviar mi entrega",
+   "rubrica": {
+    "titulo": "Cómo se evalúa · 4 dimensiones, 16 puntos",
+    "encabezados": [
+     "Dimensión",
+     "Nivel 4 · Avanzado"
+    ],
+    "filas": [
+     [
+      "Criterio",
+      "Declaras el criterio, lo sostienes y dices qué deja fuera de su medición."
+     ],
+     [
+      "Argumentación y costo",
+      "Anticipas objeciones y declaras en qué condiciones tu plan fracasaría."
+     ],
+     [
+      "Contraargumentación",
+      "Refutas con evidencia e incorporas lo válido del contrario."
+     ],
+     [
+      "Revisión y límite",
+      "Identificas el punto en que tu marco dejó de decidir por ti y qué lo sustituyó."
+     ]
+    ],
+    "nota": "La conversión a calificación corresponde al programa institucional."
+   }
+  }
+ ],
+ "ficha": [
+  "MI DECISIÓN (antes de abrir la IA)",
+  "Criterio de bienestar: {criterio}",
+  "Lo que mi criterio deja fuera: {fuera}",
+  "Mi reparto: {reparto}",
+  "Por qué sigue mi criterio: {porque}",
+  "A quién perjudico: {perjudica}"
+ ]
+}
