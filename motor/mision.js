@@ -261,17 +261,19 @@
       }
     }
 
-    // voz alta
+    // audio grabado por el docente (si el paso lo tiene); si no, no hay botón
     var lb = s.querySelector('.listen');
-    lb.addEventListener('click', function () {
-      if (!('speechSynthesis' in window)) { lb.textContent = T('noVoice'); return; }
-      if (speechSynthesis.speaking) { speechSynthesis.cancel(); lb.textContent = T('listen'); return; }
-      var clone = s.cloneNode(true);
-      clone.querySelectorAll('button,input,textarea,select,pre,video,' + (document.body.classList.contains('simple') ? '.full-only' : '.simple-only')).forEach(function (e) { e.remove(); });
-      var u = new SpeechSynthesisUtterance(clone.innerText.replace(/\s+/g, ' ').trim());
-      u.lang = T('voice'); u.rate = 0.95; u.onend = function () { lb.textContent = T('listen'); };
-      speechSynthesis.speak(u); lb.textContent = T('stop');
-    });
+    if (!p.audio) { lb.remove(); }
+    else {
+      var au = new Audio(p.audio); au.preload = 'none';
+      au.addEventListener('ended', function () { lb.textContent = T('listen'); });
+      lb.addEventListener('click', function () {
+        if (!au.paused) { au.pause(); au.currentTime = 0; lb.textContent = T('listen'); return; }
+        if (window.__audioActual && window.__audioActual !== au) { window.__audioActual.pause(); window.__audioActual.currentTime = 0; if (window.__botonActual) window.__botonActual.textContent = T('listen'); }
+        window.__audioActual = au; window.__botonActual = lb;
+        au.play(); lb.textContent = T('stop');
+      });
+    }
     return s;
   }
   function labelOf(k) {
