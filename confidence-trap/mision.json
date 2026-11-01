@@ -1,0 +1,359 @@
+{
+ "id": "confidence-trap",
+ "idioma": "en",
+ "titulo": "The confidence trap",
+ "asignatura": "Tutoring for Immersion",
+ "programa": "",
+ "formato": "Express mission · Unit 2, Topic 6",
+ "unidad": "Topic 6",
+ "descripcion": "Advise a classmate who feels ready for an exam, and defend your plan before a panel of three voices.",
+ "grupos": [
+  "Group 2",
+  "Group 07",
+  "Group 09",
+  "Group 10"
+ ],
+ "lead": "A classmate studied for eleven hours and feels ready. You are going to decide what he should do in the six days before his exam, and then defend your plan before a panel that <b>does not judge which plan you chose, but whether you can show how you got there</b>. Any of the four options can get a good verdict.",
+ "leadSimple": "A classmate studied a lot and feels ready for an exam. You choose a plan for him. Then an AI asks you questions. <b>Any option is OK.</b> What matters is that you can explain why.",
+ "regla": {
+  "titulo": "Golden rule: do not open the AI until step 4.",
+  "texto": "First you think and decide on your own. If you go to the panel without a decision, the activity becomes an interview, and what is assessed —your reasoning— disappears.",
+  "textoSimple": "First think and decide alone. You use the AI only in step 4."
+ },
+ "ficticio": "Daniel, Sofía and all the numbers in this case are fictional, created for this exercise.",
+ "pasos": [
+  {
+   "tipo": "respuesta",
+   "titulo": "Warm-up",
+   "nav": "Warm-up",
+   "tiempo": "5 min · no AI",
+   "envio": "calentamiento",
+   "intro": "A short test of your own confidence. Close your notebook and do not look anything up.",
+   "introSimple": "Close your notebook. Do not look at anything.",
+   "consigna": "1. How sure are you, from 1 to 10, that you can explain <b>the forgetting curve</b> right now?<br>2. Now write everything you remember about it. You have two minutes.<br>3. Read what you wrote. Was your number right?",
+   "consignaSimple": "1. Choose a number from 1 to 10: can you explain <b>the forgetting curve</b>?<br>2. Write what you remember (2 minutes).<br>3. Was your number correct?",
+   "campos": [
+    {
+     "tipo": "select",
+     "k": "conf",
+     "label": "My confidence before writing (1–10)",
+     "opciones": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+     ]
+    },
+    {
+     "tipo": "textarea",
+     "k": "recall",
+     "label": "What I remember about the forgetting curve",
+     "hint": "Write in English. If you do not know a word, write it in Spanish and keep going."
+    },
+    {
+     "tipo": "text",
+     "k": "check",
+     "label": "Was my number right? Why?"
+    }
+   ],
+   "boton": "Send warm-up"
+  },
+  {
+   "tipo": "caso",
+   "titulo": "The case",
+   "nav": "The case",
+   "tiempo": "3 min",
+   "intro": "Read the case carefully. Everything you need to decide is here; what is missing also counts.",
+   "introSimple": "Read the case. Look also at what it does <b>not</b> say.",
+   "caso": [
+    "<b>Daniel</b> is a first-year engineering student. His Calculus partial exam is next Monday, in six days. He has 90 minutes a day to study until then.",
+    "This is his study log from last week. He says: <i>«I know it. I am a 9 out of 10.»</i> On the quiz two weeks ago, on the same topics, he got <b>5.8</b>. He says the questions were tricky.",
+    "His friend <b>Sofía</b> studied three hours, mostly closing her notebook and solving problems. She says: <i>«I don’t feel ready at all.»</i>",
+    "Daniel asks you, as his peer tutor, what he should do in the next six days. You have to give him a plan today."
+   ],
+   "casoSimple": [
+    "Daniel has a Calculus exam in <b>6 days</b>. He can study 90 minutes a day.",
+    "Last week he studied <b>11 hours</b>, mostly reading his notes again. He feels <b>9 out of 10</b>.",
+    "In a quiz on the same topics he got <b>5.8</b>.",
+    "His friend Sofía studied 3 hours solving problems. She feels <b>not ready</b>.",
+    "You must choose a plan for Daniel today."
+   ],
+   "tabla": "<table><tr><th>What Daniel did last week</th><th class=\"num\">Hours</th></tr>\n<tr><td>Reread his class notes, four times</td><td class=\"num\">6</td></tr>\n<tr><td>Highlighted chapter 3 of the textbook in three colours</td><td class=\"num\">2</td></tr>\n<tr><td>Watched two video explanations at 1.5× speed</td><td class=\"num\">1</td></tr>\n<tr><td>Copied the slides into a neat summary</td><td class=\"num\">2</td></tr>\n<tr><td>Solved practice problems without looking at the solution</td><td class=\"num\">0</td></tr>\n<tr><th>Total</th><th class=\"num\">11</th></tr></table>",
+   "opciones": [
+    [
+     "A",
+     "Keep his method and add one full reread the night before the exam"
+    ],
+    [
+     "B",
+     "Stop rereading: from today, only test himself (free recall and problems without the solution), and check his mistakes after each try"
+    ],
+    [
+     "C",
+     "Reread for the first three days, then test himself for the last three"
+    ],
+    [
+     "D",
+     "Study with Sofía and use her flashcards"
+    ]
+   ]
+  },
+  {
+   "tipo": "ficha",
+   "titulo": "Decide your plan",
+   "nav": "Decide",
+   "tiempo": "12 min · no AI",
+   "minutos": 12,
+   "intro": "Before you decide, check what the log shows and what Topic 6 says. Then fill in your card. What you write is saved in this browser while you work.",
+   "introSimple": "Fill in your card. It is saved in this browser.",
+   "recursos": [
+    {
+     "titulo": "Student Booklet, section 10: Why rereading feels like learning",
+     "html": "A text you have read four times feels familiar, and familiarity feels like knowledge. It is not. The test is not whether you recognise the material, but whether you can produce it when the page is closed."
+    },
+    {
+     "titulo": "Testing yourself is also studying",
+     "html": "Roediger, H. L., & Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. <i>Psychological Science, 17</i>(3), 249–255. <a href=\"https://doi.org/10.1111/j.1467-9280.2006.01693.x\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.1111/j.1467-9280.2006.01693.x</a>"
+    },
+    {
+     "titulo": "Words you can use",
+     "html": "forgetting curve · illusion of knowing · retrieval practice · free recall · cued recall · spaced review · interleaving"
+    }
+   ],
+   "fichaTitulo": "Your decision card",
+   "fichaIntro": "Put the information from the case in four columns.",
+   "campos": [
+    {
+     "tipo": "columnas",
+     "campos": [
+      {
+       "tipo": "textarea",
+       "k": "log",
+       "label": "In the log",
+       "hint": "What is written in the case: activities, hours, scores. No opinions."
+      },
+      {
+       "tipo": "textarea",
+       "k": "feel",
+       "label": "Daniel’s feeling",
+       "hint": "What Daniel believes or feels about his studying."
+      },
+      {
+       "tipo": "textarea",
+       "k": "int",
+       "label": "My interpretation",
+       "hint": "What you think is happening, putting both together."
+      },
+      {
+       "tipo": "textarea",
+       "k": "plan",
+       "label": "My plan",
+       "hint": "What Daniel should do in the next six days."
+      }
+     ]
+    },
+    {
+     "tipo": "radio",
+     "k": "op",
+     "label": "My recommendation is option…",
+     "opciones": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ]
+    },
+    {
+     "tipo": "text",
+     "k": "why",
+     "label": "…because"
+    },
+    {
+     "tipo": "select",
+     "k": "concept",
+     "label": "The idea from Topic 6 that best supports my decision is",
+     "opciones": [
+      "the illusion of knowing",
+      "retrieval practice",
+      "the forgetting curve",
+      "spaced review"
+     ]
+    },
+    {
+     "tipo": "text",
+     "k": "conceptwhy",
+     "label": "…because"
+    },
+    {
+     "tipo": "text",
+     "k": "alt",
+     "label": "Another explanation for Daniel’s 5.8 that I considered and set aside"
+    },
+    {
+     "tipo": "text",
+     "k": "day3",
+     "label": "By day 3, Daniel will know if the plan is working because"
+    },
+    {
+     "tipo": "text",
+     "k": "fal",
+     "label": "My plan would be wrong if I found out that"
+    },
+    {
+     "tipo": "text",
+     "k": "cost",
+     "label": "If I am wrong, the person who pays is"
+    }
+   ]
+  },
+  {
+   "tipo": "ia",
+   "titulo": "Face the panel",
+   "nav": "The panel",
+   "tiempo": "20 min · with AI",
+   "intro": "Three voices will question you, one per round, five rounds maximum. Write in English; if you do not know a word, write it in Spanish and the panel will give you the English word.",
+   "introSimple": "An AI will ask you 5 questions, one at a time. Answer in English, with your own words.",
+   "voces": [
+    {
+     "nombre": "The Researcher",
+     "texto": "Pushes on your evidence: is that in the log, or is it a feeling?"
+    },
+    {
+     "nombre": "Daniel",
+     "texto": "Speaks in simple English and asks what happens to him on Monday if you are wrong."
+    },
+    {
+     "nombre": "The Mirror",
+     "texto": "Gives you back your own words and asks you to fix contradictions."
+    }
+   ],
+   "aviso": "At some point the panel will give you a piece of information you do not know yet. Then you will have to say if you keep or change your plan, and why. <b>Changing your mind because of new evidence does not cost you points; changing it without explaining why does.</b>",
+   "gateTexto": "Complete your card in step 3 (at least your option, the Topic 6 idea and what would make your plan wrong) to unlock the panel.",
+   "requeridos": [
+    "op",
+    "concept",
+    "fal"
+   ],
+   "plataforma": {
+    "nombre": "ChatGPT",
+    "url": "https://chatgpt.com/"
+   },
+   "prompt": [
+    "You are going to act as a STUDY PANEL of three voices that questions me. I am a first-year university student in an English immersion course (my level is around B2). The case is fictional and for practice.",
+    "",
+    "CASE: Daniel, a first-year engineering student, has a Calculus exam in six days and 90 minutes a day to study. Last week he studied 11 hours: he reread his notes four times (6 h), highlighted a textbook chapter in three colours (2 h), watched two videos at 1.5x speed (1 h), copied the slides into a neat summary (2 h), and solved 0 hours of practice problems without looking at the solution. He says \"I know it, I am a 9 out of 10\". On a quiz two weeks ago, on the same topics, he got 5.8; he says the questions were tricky. His friend Sofía studied 3 hours, mostly closing her notebook and solving problems, and says \"I don't feel ready at all\". Daniel asks me, as his peer tutor, for a plan. Options: A) keep his method and add one full reread the night before; B) stop rereading and only test himself (free recall and problems without the solution), checking mistakes after each try; C) reread for three days, then test himself for three days; D) study with Sofía and use her flashcards.",
+    "",
+    "CENTRAL RULE: you do not judge which option I chose. You judge whether I can show how I got there. Any option can get a good verdict.",
+    "",
+    "LANGUAGE: use clear B2 English and short paragraphs. If I write a word in Spanish, give me the English word and continue. Do not correct my grammar unless I ask. Do not use audio.",
+    "",
+    "START: at the end of this message is my decision card, written before I opened the AI. Read it and start directly with round 1.",
+    "",
+    "THREE VOICES, each one says its name every time it speaks:",
+    "- THE RESEARCHER: pushes on the evidence. \"Is that in the log, or is it a feeling?\" \"Which idea from the topic explains that: the illusion of knowing, retrieval practice, the forgetting curve or spaced review?\" \"What other explanation fits the same data?\"",
+    "- DANIEL: speaks in simple English, without technical words, and asks what happens to him on Monday if I am wrong.",
+    "- THE MIRROR: only gives me back my own words and asks me to fix contradictions. It gives no new information.",
+    "",
+    "ROUNDS: maximum 5. Only one voice per round, taking turns. Ask only one question per round and wait for my answer.",
+    "",
+    "IN ROUND 3 give me this information, without commenting on it: \"Daniel tells you that when he fails a practice test he gets very anxious. Last semester, after a bad mock exam, he stopped studying for two days.\" Then ask me if I keep or change my plan, and why.",
+    "",
+    "FORBIDDEN: giving me \"the right answer\"; telling me if my plan is right or wrong; inventing statistics or studies presented as real; giving a medical or psychological diagnosis of Daniel.",
+    "",
+    "CLOSING after round 5: give a VERDICT of four lines: 1) what in my plan rests on evidence from the log; 2) the exact point where I trusted a feeling (mine or Daniel's) instead of evidence; 3) which idea from the topic supports my plan; 4) what information would make my plan fail. End with the sentence \"The panel does not judge your plan\" and one single question: where, in my own studying this term, am I trusting familiarity instead of retrieval?"
+   ]
+  },
+  {
+   "tipo": "entrega",
+   "titulo": "Final delivery",
+   "nav": "Delivery",
+   "tiempo": "10 min · no AI",
+   "intro": "Review your plan in writing: <b>what changed during the panel, or why it did not change</b>. For the conversation link, in ChatGPT press <b>Share → Copy link</b>.",
+   "introSimple": "Write what changed in your plan after the panel, or why it did not change. Paste the link to your conversation.",
+   "campos": [
+    {
+     "tipo": "radio",
+     "k": "op_final",
+     "label": "After the panel, my final recommendation is option…",
+     "opciones": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ]
+    },
+    {
+     "tipo": "textarea",
+     "k": "revision",
+     "label": "What changed during the panel, or why it did not change",
+     "hint": "Mention the information from round 3 and what you did with it."
+    },
+    {
+     "tipo": "textarea",
+     "k": "transfer",
+     "label": "In one of MY subjects this term, where am I trusting familiarity? What will I do this week instead?"
+    },
+    {
+     "tipo": "text",
+     "k": "enlace",
+     "label": "Link to the conversation with the panel",
+     "placeholder": "https://chatgpt.com/share/…"
+    }
+   ],
+   "requeridos": [
+    "op",
+    "fal",
+    "op_final",
+    "revision",
+    "transfer",
+    "enlace"
+   ],
+   "boton": "Send my final delivery",
+   "rubrica": {
+    "titulo": "How it is assessed · 4 dimensions, 16 points",
+    "encabezados": [
+     "Dimension",
+     "Level 4 · Advanced"
+    ],
+    "filas": [
+     [
+      "Evidence and feeling",
+      "You consistently separate what the log shows from what Daniel feels, and you notice that his 9 out of 10 is a feeling, not a result."
+     ],
+     [
+      "Topic idea and alternative",
+      "You use an idea from Topic 6 correctly, give another explanation for the 5.8 and say why you set it aside."
+     ],
+     [
+      "Answers to the panel",
+      "You answer with evidence, accept what is valid in the objection and correct your own text."
+     ],
+     [
+      "Testing the plan and transfer",
+      "You say how Daniel will know by day 3 if the plan works, and you apply the idea to one of your own subjects with a concrete action."
+     ]
+    ],
+    "nota": "This practice prepares portfolio piece 7 (ten self-written questions). The conversion to a mark follows the course rules."
+   }
+  }
+ ],
+ "ficha": [
+  "MY DECISION CARD",
+  "In the log: {log}",
+  "Daniel’s feeling: {feel}",
+  "My interpretation: {int}",
+  "My plan: {plan}",
+  "My recommendation is option {op} because {why}",
+  "The idea from Topic 6 that supports it is {concept}, because {conceptwhy}",
+  "Another explanation for the 5.8 that I set aside: {alt}",
+  "By day 3, Daniel will know if the plan works because: {day3}",
+  "My plan would be wrong if I found out that: {fal}",
+  "If I am wrong, the person who pays is: {cost}"
+ ]
+}
