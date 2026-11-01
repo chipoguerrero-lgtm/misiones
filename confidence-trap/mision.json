@@ -62,7 +62,8 @@
      "label": "Was my number right? Why?"
     }
    ],
-   "boton": "Send warm-up"
+   "boton": "Send warm-up",
+   "audio": "audio/paso1.mp3"
   },
   {
    "tipo": "caso",
@@ -102,7 +103,8 @@
      "D",
      "Study with Sofía and use her flashcards"
     ]
-   ]
+   ],
+   "audio": "audio/paso2.mp3"
   },
   {
    "tipo": "ficha",
@@ -210,7 +212,8 @@
      "k": "cost",
      "label": "If I am wrong, the person who pays is"
     }
-   ]
+   ],
+   "audio": "audio/paso3.mp3"
   },
   {
    "tipo": "ia",
@@ -267,7 +270,8 @@
     "FORBIDDEN: giving me \"the right answer\"; telling me if my plan is right or wrong; inventing statistics or studies presented as real; giving a medical or psychological diagnosis of Daniel.",
     "",
     "CLOSING after round 5: give a VERDICT of four lines: 1) what in my plan rests on evidence from the log; 2) the exact point where I trusted a feeling (mine or Daniel's) instead of evidence; 3) which idea from the topic supports my plan; 4) what information would make my plan fail. End with the sentence \"The panel does not judge your plan\" and one single question: where, in my own studying this term, am I trusting familiarity instead of retrieval?"
-   ]
+   ],
+   "audio": "audio/paso4.mp3"
   },
   {
    "tipo": "entrega",
@@ -340,7 +344,8 @@
      ]
     ],
     "nota": "This practice prepares portfolio piece 7 (ten self-written questions). The conversion to a mark follows the course rules."
-   }
+   },
+   "audio": "audio/paso5.mp3"
   }
  ],
  "ficha": [
