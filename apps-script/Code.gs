@@ -14,6 +14,8 @@
  *    Ejecutar como: Yo · Quién tiene acceso: Cualquier usuario.
  * 4. Copia la URL que termina en /exec y pégala en config.js del repositorio.
  *
+ * Centro de mando: el archivo Mando.gs de este mismo proyecto atiende la página privada mando/.
+ *
  * Respaldo: si quieres copia semanal de la hoja, agrega también el archivo Respaldo.gs
  * que ya usas en tus otros proyectos (con RESPALDO_ID_HOJA vacío lo encuentra solo).
  */
@@ -45,6 +47,7 @@ function doGet() {
 function doPost(e) {
   try {
     var body = JSON.parse(e.postData.contents);
+    if (body.accion) return json_({ ok: true, datos: mando_(body) }); // Centro de mando (Mando.gs)
     var mision = limpio_(body.mision, 60);
     if (!/^[a-z0-9-]+$/.test(mision)) throw new Error('misión inválida');
     var datos = body.datos || {};

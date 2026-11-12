@@ -34,6 +34,32 @@ Todas las misiones comparten cuatro reglas: el alumno decide solo primero, sin I
 
 Mientras `API_URL` esté vacía, las misiones funcionan en **modo de prueba**: se pueden recorrer completas, pero no envían nada.
 
+## Centro de mando docente (privado)
+
+Página para el docente en **https://chipoguerrero-lgtm.github.io/misiones/mando/**, con tres secciones: **Proyectos** (estado, siguiente acción y fecha; «Esta semana»), **Dictámenes** (Claude propone calificación y comentarios, el docente aprueba o ajusta) y **Ritual** (briefing del domingo, debrief del viernes). No aparece en la portada, pide clave y no guarda ningún dato en este repositorio: todo vive en la hoja «Centro de mando docente» de la cuenta institucional.
+
+Usa el mismo proyecto de Apps Script y la misma URL de `config.js` que las misiones.
+
+**Instalación (una sola vez, unos 10 minutos)**
+
+1. Abre el proyecto *Misiones exprés* en https://script.google.com con **cguerrero@upsrj.edu.mx**.
+2. Reemplaza `Código.gs` con la versión nueva de [`apps-script/Code.gs`](apps-script/Code.gs) (solo agrega una línea que dirige las peticiones del centro de mando).
+3. **+ › Secuencia de comandos**, nómbralo `Mando` y pega todo [`apps-script/Mando.gs`](apps-script/Mando.gs). Guarda.
+4. Elige la función **instalarMando** › **Ejecutar** › acepta los permisos nuevos (Drive y activadores). Se crean la hoja *Centro de mando docente* con tus 17 proyectos, la carpeta *Buzón del centro de mando* y la importación cada hora.
+5. Abre **Registro de ejecución** y copia la **clave** (formato `xxxx-xxxx-xxxx-xxxx`). Guárdala en tu gestor de contraseñas.
+6. **Implementar › Gestionar implementaciones** › lápiz › *Versión:* **Nueva versión** › **Implementar**. La URL `/exec` no cambia, así que `config.js` y las misiones siguen igual.
+7. Entra a `…/misiones/mando/`, escribe la clave y marca «Recordar en este navegador» solo en tus equipos.
+8. Para que Claude deje propuestas: comparte la carpeta *Buzón del centro de mando* con tu cuenta personal como **editor**, y la hoja *Misiones exprés – Envíos* como **lector**.
+
+**El buzón.** Claude deja archivos CSV en la carpeta; cada hora (o con el botón «Revisar el buzón ahora») se importan y se mueven a *Procesados*.
+
+- `dictamenes_….csv`: Misión, Asignatura, Grupo, Equipo o alumno, Matrícula, Actividad, Envío (fecha y hora del envío del alumno), Calificación propuesta, Comentarios propuestos, Enlace a la entrega. Entran como «Por aprobar» y no se duplican.
+- `proyectos_….csv`: Proyecto, Estado, Siguiente acción, Fecha (aaaa-mm-dd), Enlace, Notas. Actualiza el proyecto con ese nombre o lo crea; así funciona «cierra sesión».
+
+La sección Dictámenes cuenta, por misión y grupo, las entregas finales que todavía no tienen dictamen.
+
+**Reglas.** Ninguna calificación pasa a la hoja *Calificaciones* sin aprobación del docente. Se usa la rúbrica de cada misión (4 dimensiones, 16 puntos) o la de la asignatura; no se inventan escalas. Si alguien ve la clave, ejecuta **cambiarClaveMando** y entra con la nueva.
+
 ## Agregar una misión nueva
 
 Ver [`plantilla/COMO-AGREGAR.md`](plantilla/COMO-AGREGAR.md).

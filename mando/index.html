@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Centro de mando docente · Misiones exprés</title>
+<link rel="stylesheet" href="../motor/mision.css">
+<style>
+/* Centro de mando: privado, sin datos en el repositorio. Todo llega de Apps Script con la clave. */
+.tabs{position:sticky;top:0;z-index:5;background:rgba(243,241,236,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);margin-top:10px}
+.tabs .in{display:flex;gap:6px;overflow-x:auto;padding:10px 0;align-items:center}
+.tabs button{font:inherit;font-weight:700;font-size:15px;border:0;background:none;color:var(--muted);padding:8px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.tabs button.on{color:var(--ink);background:var(--card);box-shadow:var(--shadow)}
+.tabs .n{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;margin-left:6px;border-radius:11px;background:var(--yellow);color:#1E2A4A;font-size:12px}
+.tabs .salir{margin-left:auto;font-size:13px}
+.box{background:var(--card);border-radius:24px;box-shadow:var(--shadow);padding:22px clamp(16px,3vw,30px);margin:20px 0}
+.box h2{font-size:clamp(26px,3.4vw,34px)}
+.sub{color:var(--muted);margin-top:2px}
+.chip{display:inline-block;font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px;white-space:nowrap;background:var(--hatch);color:var(--ink)}
+.e-idea{background:#E3ECFA}.e-en-construccion{background:#FFF4B8}.e-en-uso{background:#E3F3F1;color:#14615C}
+.e-pausado,.e-por-definir{background:#ECEAE4;color:var(--muted)}.e-cerrado{background:#DCE3EE;color:var(--blue)}
+.e-aprobado{background:#E3F3F1;color:#14615C}.e-ajustado{background:#FFF4B8}.e-descartado{background:#ECEAE4;color:var(--muted)}
+body.bv .chip{background:#000;color:#fff;border:1px solid #fff}
+.semana{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin-top:12px}
+.it{display:grid;grid-template-columns:92px 1fr;gap:8px;text-align:left;font:inherit;color:inherit;background:var(--hatch);border:0;border-radius:14px;padding:10px 12px;cursor:pointer}
+.it b{font-family:'Kalam',cursive;font-size:22px;line-height:1.1;color:var(--blue)}
+.it.vencida b{color:#A3261B}
+.it small{display:block;color:var(--muted);font-size:14px}
+.alerta{margin-top:12px;font-weight:700;color:#9A5B00}
+.filtros{display:flex;flex-wrap:wrap;gap:6px}
+.filtros button{font:inherit;font-size:14px;font-weight:700;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:4px 12px;cursor:pointer}
+.filtros button.on{border-color:var(--ink);background:var(--ink);color:var(--card)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin:16px 0 8px}
+.card{background:var(--card);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px;display:flex;flex-direction:column;gap:6px;text-align:left;font:inherit;color:inherit;border:2px solid transparent;cursor:pointer}
+.card:hover,.card:focus-visible{border-color:var(--blue)}
+.card .t{font-family:'Kalam',cursive;font-size:24px;line-height:1.15;color:var(--blue)}
+.card .amb{font-size:13px;color:var(--muted)}
+.card .sig{font-size:15px}.card .sig span{color:var(--muted)}
+.card .pie{margin-top:auto;padding-top:8px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;gap:8px;font-size:14px;font-weight:700}
+.card .pie .f{color:var(--teal)}
+body.bv .card{border-color:#fff}
+.lote{margin-top:22px}
+.lote h3{margin:0 0 10px;font-family:'Kalam',cursive;font-size:26px;color:var(--blue)}
+.dict{background:var(--card);border-radius:20px;box-shadow:var(--shadow);padding:16px 18px;display:grid;grid-template-columns:minmax(170px,1fr) 120px minmax(240px,2.4fr) auto;gap:14px;align-items:start;margin-bottom:12px}
+.dict .q b{display:block;font-size:17px}
+.dict .q small{display:block;color:var(--muted);font-size:14px}
+.dict label{font-weight:700;font-size:14px;display:flex;flex-direction:column;gap:4px}
+.dict input,.dict textarea{font-weight:400}
+.dict .prop{font-weight:400;color:var(--muted);font-size:13px}
+.dict .acc{display:flex;flex-direction:column;gap:8px}
+.dict .btn{padding:9px 16px;justify-content:center}
+body.bv .dict{border:2px solid #fff}
+.porhacer{display:grid;gap:8px;margin-top:10px}
+.porhacer div{display:flex;justify-content:space-between;gap:12px;padding:10px 14px;background:var(--hatch);border-radius:12px}
+.cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:20px 0}
+.cifras .box{margin:0}
+.cifras b{display:block;font-family:'Kalam',cursive;font-size:52px;line-height:1;color:var(--blue)}
+.dos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.dos .box{margin:0}
+.dos label{display:block;font-weight:700;margin:12px 0 6px}
+.hist{display:grid;gap:8px;margin-top:10px}
+.hist div{background:var(--hatch);border-radius:12px;padding:10px 14px}
+.velo{position:fixed;inset:0;background:rgba(30,42,74,.45);display:flex;align-items:flex-start;justify-content:center;padding:6vh 16px;z-index:20;overflow:auto}
+.dialogo{background:var(--card);border-radius:24px;padding:22px;width:100%;max-width:580px}
+.dialogo .cols label{display:block;font-weight:700;margin:10px 0 4px}
+body.bv .dialogo{border:2px solid #fff}
+.aviso{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--ink);color:var(--card);padding:10px 18px;border-radius:12px;z-index:30;max-width:90vw;font-weight:700}
+.aviso.mal{background:#A3261B;color:#fff}
+.vacio{color:var(--muted);padding:12px 0}
+input[type=date],input[type=url],input[type=password]{width:100%;font:inherit;border:2px solid var(--line);border-radius:12px;padding:10px 12px;background:#fff;color:var(--ink)}
+body.bv input[type=date],body.bv input[type=url],body.bv input[type=password]{background:#000;color:#fff;border-color:#fff}
+@media (max-width:760px){ .dict{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="a11y" role="group" aria-label="Opciones de accesibilidad">
+    <button type="button" data-a="bv" aria-pressed="false">Baja visión: letra grande y alto contraste</button>
+  </div>
+  <div class="logos"><img src="../assets/logo_upsrj.png" alt="Universidad Politécnica de Santa Rosa Jáuregui"><img src="../assets/logo_iehl.png" alt="IEHL · Integral Education for Higher Learning"></div>
+  <div class="eyebrow">Lic. Cristóbal Guerrero Hernández · Privado</div>
+  <h1>Centro de mando docente</h1>
+  <p class="lead" id="hoy">Proyectos, dictámenes y ritual semanal en un solo lugar.</p>
+</header>
+</div>
+<div class="tabs" id="tabs" hidden><div class="wrap in">
+  <button data-v="proyectos" class="on">Proyectos</button>
+  <button data-v="dictamenes">Dictámenes<span class="n" id="nDict" hidden>0</span></button>
+  <button data-v="ritual">Ritual</button>
+  <button class="salir" id="salir">Cerrar sesión</button>
+</div></div>
+<main class="wrap" id="main"><p class="vacio">Cargando…</p></main>
+<footer class="wrap">
+  <div class="foot">
+    <div class="logos"><img src="../assets/logo_upsrj.png" alt="Universidad Politécnica de Santa Rosa Jáuregui"><img src="../assets/logo_iehl.png" alt="IEHL · Integral Education for Higher Learning"></div>
+    <img class="firma" src="../assets/firma_designed_by_chipo.png" alt="Designed and built by Chipo">
+  </div>
+  <p>Página privada del docente. No guarda datos en este sitio: todo vive en la hoja «Centro de mando docente» de la cuenta institucional.</p>
+</footer>
+<script src="../config.js"></script>
+<script>
+(function () {
+  var API = (window.MISIONES_CONFIG && window.MISIONES_CONFIG.API_URL) || '';
+  var KEY = 'mando-clave';
+  var CAT = {};
+  fetch('../catalogo.json', { cache: 'no-cache' }).then(function (r) { return r.json(); })
+    .then(function (l) { l.forEach(function (m) { CAT[m.id] = m.titulo + ' · ' + m.caso; }); if (D && vista === 'dictamenes') pintar(); }).catch(function () {});
+  function mision(id) { return CAT[id] || id; }
+  var D = null, vista = 'proyectos', filtro = 'Activos', busca = '', clave = '';
+  var $ = function (s) { return document.querySelector(s); };
+  function esc(t) { return String(t == null ? '' : t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function slug(t) { return String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, '-'); }
+  function chip(e) { return '<span class="chip e-' + slug(e || 'Por definir') + '">' + esc(e || 'Por definir') + '</span>'; }
+  function guardado(k) { try { return localStorage.getItem(k) || sessionStorage.getItem(k) || ''; } catch (e) { return ''; } }
+  function guardar(k, v, recordar) { try { (recordar ? localStorage : sessionStorage).setItem(k, v); } catch (e) {} }
+  function olvidar(k) { try { localStorage.removeItem(k); sessionStorage.removeItem(k); } catch (e) {} }
+
+  // Accesibilidad compartida con las misiones
+  (function () {
+    var st = {}; try { st = JSON.parse(localStorage.getItem('misiones-a11y') || '{}'); } catch (e) {}
+    var b = document.querySelector('[data-a="bv"]');
+    if (st.bv) { document.body.classList.add('bv'); b.setAttribute('aria-pressed', 'true'); }
+    b.addEventListener('click', function () {
+      var on = !document.body.classList.contains('bv'); document.body.classList.toggle('bv', on); b.setAttribute('aria-pressed', on);
+      st.bv = on; try { localStorage.setItem('misiones-a11y', JSON.stringify(st)); } catch (e) {}
+    });
+  })();
+
+  var DIAS = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'], MESES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+  function aFecha(t) { var m = String(t || '').match(/^(\d{4})-(\d{2})-(\d{2})/); return m ? new Date(+m[1], +m[2] - 1, +m[3]) : null; }
+  function corta(t) { var d = aFecha(t); return d ? DIAS[d.getDay()] + ' ' + d.getDate() + ' ' + MESES[d.getMonth()] : ''; }
+  function dias(a, b) { return Math.round((aFecha(a) - aFecha(b)) / 864e5); }
+
+  function llamar(accion, extra) {
+    var body = Object.assign({ accion: accion, clave: clave }, extra || {});
+    return fetch(API, { method: 'POST', body: JSON.stringify(body) })
+      .then(function (r) { return r.json(); })
+      .then(function (j) { if (!j.ok) throw new Error(j.error || 'Error'); D = j.datos; return D; });
+  }
+  function aviso(t, mal) {
+    var a = document.createElement('div'); a.className = 'aviso' + (mal ? ' mal' : ''); a.textContent = t;
+    document.body.appendChild(a); setTimeout(function () { a.remove(); }, mal ? 6000 : 3000);
+  }
+
+  /* ── Entrada con clave ── */
+  function pedirClave(msg) {
+    $('#tabs').hidden = true;
+    $('#main').innerHTML = '<form class="box" id="fc" style="max-width:520px"><h2>Entrar</h2>' +
+      '<p class="sub">Escribe la clave que te dio <b>instalarMando()</b> en Apps Script.</p>' +
+      (msg ? '<p class="err" style="margin-top:10px">' + esc(msg) + '</p>' : '') +
+      '<label class="q" for="c-clave">Clave</label><input type="password" id="c-clave" autocomplete="current-password" required>' +
+      '<label style="display:flex;gap:8px;align-items:center;margin-top:12px;font-weight:600"><input type="checkbox" id="c-rec" style="width:auto"> Recordar en este navegador</label>' +
+      '<div class="row"><button class="btn teal" id="c-ok">Entrar</button></div></form>';
+    $('#c-clave').focus();
+    $('#fc').onsubmit = function (e) {
+      e.preventDefault(); $('#c-ok').disabled = true;
+      clave = $('#c-clave').value.trim();
+      llamar('datos').then(function () { guardar(KEY, clave, $('#c-rec').checked); pintar(); })
+        .catch(function (err) { clave = ''; pedirClave(err.message === 'CLAVE' ? 'Esa clave no es correcta.' : err.message); });
+    };
+  }
+  function iniciar() {
+    if (!API) { $('#main').innerHTML = '<div class="box"><h2>Falta conectar</h2><p>Pega la URL de Apps Script en <b>config.js</b>.</p></div>'; return; }
+    clave = guardado(KEY);
+    if (!clave) return pedirClave();
+    $('#main').innerHTML = '<p class="vacio">Cargando tu centro de mando…</p>';
+    llamar('datos').then(pintar).catch(function (err) {
+      if (err.message === 'CLAVE') { olvidar(KEY); return pedirClave('La clave guardada ya no sirve. Escríbela de nuevo.'); }
+      $('#main').innerHTML = '<div class="box"><h2>No pude conectar</h2><p>' + esc(err.message) + '</p><div class="row"><button class="btn" id="re">Reintentar</button></div></div>';
+      $('#re').onclick = iniciar;
+    });
+  }
+  $('#salir').onclick = function () { olvidar(KEY); clave = ''; D = null; pedirClave(); };
+
+  function pintar() {
+    var d = aFecha(D.hoy);
+    $('#hoy').textContent = 'Hoy es ' + ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'][d.getDay()] + ' ' + d.getDate() +
+      ' de ' + ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'][d.getMonth()] + '.';
+    $('#tabs').hidden = false;
+    var n = D.pendientes.length; $('#nDict').hidden = !n; $('#nDict').textContent = n;
+    document.querySelectorAll('#tabs [data-v]').forEach(function (b) { b.classList.toggle('on', b.dataset.v === vista); });
+    ({ proyectos: vProyectos, dictamenes: vDictamenes, ritual: vRitual })[vista]();
+  }
+  document.querySelectorAll('#tabs [data-v]').forEach(function (b) { b.onclick = function () { vista = b.dataset.v; pintar(); }; });
+
+  /* ── Proyectos ── */
+  function activos() { return D.proyectos.filter(function (p) { return p['Estado'] !== 'Cerrado'; }); }
+  function semana() {
+    return activos().filter(function (p) { return p['Fecha'] && dias(p['Fecha'], D.hoy) <= 7; })
+      .sort(function (a, b) { return String(a['Fecha']).localeCompare(String(b['Fecha'])); });
+  }
+  function detenidos() {
+    return D.proyectos.filter(function (p) {
+      return ['En construcción', 'En uso'].indexOf(p['Estado']) >= 0 && p['Actualizado'] && dias(D.hoy, p['Actualizado']) >= 14;
+    });
+  }
+  function vProyectos() {
+    var s = semana(), det = detenidos();
+    var lista = D.proyectos.filter(function (p) {
+      return filtro === 'Todos' ? true : filtro === 'Activos' ? p['Estado'] !== 'Cerrado' : p['Estado'] === filtro;
+    });
+    if (busca) lista = lista.filter(function (p) { return (p['Proyecto'] + ' ' + p['Ámbito'] + ' ' + p['Siguiente acción']).toLowerCase().indexOf(busca.toLowerCase()) >= 0; });
+    lista.sort(function (a, b) { return String(a['Fecha'] || '9999').localeCompare(String(b['Fecha'] || '9999')) || String(a['Proyecto']).localeCompare(String(b['Proyecto'])); });
+    $('#main').innerHTML =
+      '<section class="box"><h2>Esta semana</h2><p class="sub">Lo vencido y lo que vence en los próximos 7 días.</p>' +
+      (s.length ? '<div class="semana">' + s.map(function (p) {
+        return '<button class="it' + (dias(p['Fecha'], D.hoy) < 0 ? ' vencida' : '') + '" data-id="' + esc(p['ID']) + '"><b>' + esc(corta(p['Fecha'])) + '</b><span>' +
+          esc(p['Siguiente acción'] || 'Sin siguiente acción') + '<small>' + esc(p['Proyecto']) + '</small></span></button>';
+      }).join('') + '</div>' : '<p class="vacio">Nada vence esta semana. Pon fecha a la siguiente acción de tus proyectos activos.</p>') +
+      (det.length ? '<p class="alerta">Sin movimiento en 14 días: ' + det.map(function (p) { return esc(p['Proyecto']); }).join(', ') + '</p>' : '') +
+      '</section>' +
+      '<div class="row" style="justify-content:space-between"><div class="filtros">' +
+      ['Activos'].concat(D.estados, ['Todos']).map(function (f) { return '<button data-f="' + esc(f) + '" class="' + (f === filtro ? 'on' : '') + '">' + esc(f) + '</button>'; }).join('') +
+      '</div><div class="row" style="margin:0"><input type="text" id="busca" placeholder="Buscar proyecto" aria-label="Buscar proyecto" style="max-width:240px" value="' + esc(busca) + '"><button class="btn teal" id="nuevo">Nuevo proyecto</button></div></div>' +
+      '<div class="grid">' + (lista.length ? lista.map(function (p) {
+        return '<button class="card" data-id="' + esc(p['ID']) + '"><div class="row" style="margin:0;justify-content:space-between;gap:6px">' + chip(p['Estado']) +
+          '<span class="amb">' + esc(p['Ámbito']) + '</span></div><div class="t">' + esc(p['Proyecto']) + '</div>' +
+          '<div class="sig"><span>Sigue:</span> ' + esc(p['Siguiente acción'] || '—') + '</div>' +
+          '<div class="pie"><span class="f">' + esc(corta(p['Fecha']) || 'Sin fecha') + '</span>' +
+          (p['Enlace'] ? '<a href="' + esc(p['Enlace']) + '" target="_blank" rel="noopener" data-stop>Abrir</a>' : '') + '</div></button>';
+      }).join('') : '<p class="vacio">No hay proyectos con ese filtro.</p>') + '</div>';
+    document.querySelectorAll('[data-f]').forEach(function (b) { b.onclick = function () { filtro = b.dataset.f; vProyectos(); }; });
+    document.querySelectorAll('.card, .it').forEach(function (c) {
+      c.onclick = function (e) { if (e.target.hasAttribute('data-stop')) return; editar(D.proyectos.filter(function (p) { return p['ID'] === c.dataset.id; })[0]); };
+    });
+    $('#nuevo').onclick = function () { editar({}); };
+    var bi = $('#busca'); bi.oninput = function () { busca = bi.value; var pos = bi.selectionStart; vProyectos(); var n = $('#busca'); n.focus(); n.setSelectionRange(pos, pos); };
+  }
+  function editar(p) {
+    var v = document.createElement('div'); v.className = 'velo';
+    v.innerHTML = '<form class="dialogo" id="fp"><h2>' + (p['ID'] ? 'Actualizar proyecto' : 'Nuevo proyecto') + '</h2><div class="cols">' +
+      '<div style="grid-column:1/-1"><label for="f-n">Proyecto</label><input type="text" id="f-n" required value="' + esc(p['Proyecto']) + '"></div>' +
+      '<div><label for="f-e">Estado</label><select id="f-e">' + D.estados.map(function (e) { return '<option' + (e === (p['Estado'] || 'Por definir') ? ' selected' : '') + '>' + esc(e) + '</option>'; }).join('') + '</select></div>' +
+      '<div><label for="f-f">Fecha</label><input type="date" id="f-f" value="' + esc(p['Fecha']) + '"></div>' +
+      '<div style="grid-column:1/-1"><label for="f-s">Siguiente acción</label><input type="text" id="f-s" placeholder="Un verbo y un objeto: grabar los audios del paso 3" value="' + esc(p['Siguiente acción']) + '"></div>' +
+      '<div><label for="f-a">Ámbito</label><input type="text" id="f-a" value="' + esc(p['Ámbito']) + '"></div>' +
+      '<div><label for="f-l">Enlace</label><input type="url" id="f-l" placeholder="https://" value="' + esc(p['Enlace']) + '"></div>' +
+      '<div style="grid-column:1/-1"><label for="f-o">Notas</label><textarea id="f-o">' + esc(p['Notas']) + '</textarea></div>' +
+      '</div><div class="row" style="justify-content:flex-end"><button type="button" class="btn alt" id="f-x">Cancelar</button><button class="btn teal" id="f-ok">Guardar</button></div></form>';
+    document.body.appendChild(v);
+    function cerrar() { v.remove(); }
+    v.onclick = function (e) { if (e.target === v) cerrar(); };
+    $('#f-x').onclick = cerrar; $('#f-n').focus();
+    $('#fp').onsubmit = function (e) {
+      e.preventDefault(); $('#f-ok').disabled = true;
+      llamar('guardarProyecto', { proyecto: {
+        'ID': p['ID'] || '', 'Proyecto': $('#f-n').value, 'Estado': $('#f-e').value, 'Fecha': $('#f-f').value,
+        'Siguiente acción': $('#f-s').value, 'Ámbito': $('#f-a').value, 'Enlace': $('#f-l').value, 'Notas': $('#f-o').value
+      } }).then(function () { cerrar(); pintar(); aviso('Proyecto guardado'); })
+        .catch(function (err) { $('#f-ok').disabled = false; aviso(err.message, true); });
+    };
+  }
+
+  /* ── Dictámenes ── */
+  function vDictamenes() {
+    var lotes = {};
+    D.pendientes.forEach(function (r) { var k = (r['Misión'] ? mision(r['Misión']) : r['Asignatura']) + ' · ' + r['Grupo']; (lotes[k] = lotes[k] || []).push(r); });
+    var sin = D.sinDictamen || [];
+    $('#main').innerHTML =
+      '<section class="box"><h2>' + (D.pendientes.length ? D.pendientes.length + ' dictámenes esperan tu visto bueno' : 'No hay dictámenes pendientes') + '</h2>' +
+      '<p class="sub">Aprueba tal cual o corrige la calificación y los comentarios antes de aprobar; si cambias algo, queda registrado como ajustado. Lo aprobado pasa a la hoja Calificaciones.</p>' +
+      (sin.length ? '<h3>Entregas de misiones todavía sin dictamen</h3><div class="porhacer">' + sin.map(function (x) {
+        return '<div><span><b>' + esc(mision(x.mision)) + '</b> · ' + esc(x.grupo) + '</span><span>' + x.entregas + (x.entregas === 1 ? ' entrega' : ' entregas') + '</span></div>';
+      }).join('') + '</div><p class="sub" style="margin-top:8px">Pídeme «dictamina las entregas de …» y aparecerán aquí para tu aprobación.</p>' : '') +
+      '<div class="row"><button class="btn alt" id="imp">Revisar el buzón ahora</button></div></section>' +
+      Object.keys(lotes).sort().map(function (k) {
+        return '<section class="lote"><h3>' + esc(k) + ' (' + lotes[k].length + ')</h3>' + lotes[k].map(function (r) {
+          return '<article class="dict" data-id="' + esc(r['ID']) + '"><div class="q"><b>' + esc(r['Equipo o alumno']) + '</b><small>' +
+            esc(r['Actividad'] || r['Asignatura']) + (r['Matrícula'] ? ' · ' + esc(r['Matrícula']) : '') + '</small>' +
+            (r['Enlace a la entrega'] ? '<a href="' + esc(r['Enlace a la entrega']) + '" target="_blank" rel="noopener">Ver entrega</a>' : '') + '</div>' +
+            '<label>Calificación<input type="text" class="cal" value="' + esc(r['Calificación propuesta']) + '"><span class="prop">Propuesta: ' + esc(r['Calificación propuesta']) + '</span></label>' +
+            '<label>Comentarios de mejora<textarea class="com">' + esc(r['Comentarios propuestos']) + '</textarea></label>' +
+            '<div class="acc"><button class="btn teal ap">Aprobar</button><button class="btn alt de">Descartar</button></div></article>';
+        }).join('') + '</section>';
+      }).join('') +
+      (D.revisados.length ? '<section class="box"><h2>Revisados recientemente</h2><div class="tablewrap"><table><thead><tr><th>Equipo o alumno</th><th>Misión o asignatura</th><th class="num">Calificación</th><th>Estado</th></tr></thead><tbody>' +
+        D.revisados.map(function (r) {
+          return '<tr><td>' + esc(r['Equipo o alumno']) + '</td><td>' + esc(r['Misión'] ? mision(r['Misión']) : r['Asignatura']) + ' · ' + esc(r['Grupo']) + '</td><td class="num">' + esc(r['Calificación final']) + '</td><td>' + chip(r['Estado']) + '</td></tr>';
+        }).join('') + '</tbody></table></div></section>' : '');
+    $('#imp').onclick = function () {
+      this.disabled = true;
+      llamar('importar').then(function () { pintar(); aviso('Buzón revisado'); }).catch(function (err) { aviso(err.message, true); pintar(); });
+    };
+    document.querySelectorAll('.dict').forEach(function (a) {
+      function enviar(decision) {
+        a.querySelectorAll('button').forEach(function (b) { b.disabled = true; });
+        llamar('resolverDictamen', { id: a.dataset.id, calificacion: a.querySelector('.cal').value, comentarios: a.querySelector('.com').value, decision: decision })
+          .then(function () { pintar(); aviso(decision === 'aprobar' ? 'Dictamen aprobado' : 'Dictamen descartado'); })
+          .catch(function (err) { a.querySelectorAll('button').forEach(function (b) { b.disabled = false; }); aviso(err.message, true); });
+      }
+      a.querySelector('.ap').onclick = function () { enviar('aprobar'); };
+      var de = a.querySelector('.de');
+      de.onclick = function () {
+        if (de.dataset.c) return enviar('descartar');
+        de.dataset.c = '1'; de.textContent = 'Confirmar descarte';
+        setTimeout(function () { if (de.isConnected) { delete de.dataset.c; de.textContent = 'Descartar'; } }, 4000);
+      };
+    });
+  }
+
+  /* ── Ritual ── */
+  function vRitual() {
+    var op = activos().map(function (p) { return '<option>' + esc(p['Proyecto']) + '</option>'; }).join('');
+    function sel(id, n) { return '<label for="' + id + '">Prioridad ' + n + '</label><select id="' + id + '"><option value="">Elige un proyecto</option>' + op + '</select>'; }
+    var ult = D.ritual.filter(function (r) { return r['Tipo'] === 'Briefing'; })[0];
+    var porEntregar = (D.sinDictamen || []).reduce(function (a, x) { return a + x.entregas; }, 0);
+    $('#main').innerHTML =
+      '<div class="cifras"><div class="box"><span class="sub">Dictámenes por aprobar</span><b>' + D.pendientes.length + '</b></div>' +
+      '<div class="box"><span class="sub">Entregas sin dictamen</span><b>' + porEntregar + '</b></div>' +
+      '<div class="box"><span class="sub">Acciones esta semana</span><b>' + semana().length + '</b></div>' +
+      '<div class="box"><span class="sub">Proyectos detenidos 14 días</span><b>' + detenidos().length + '</b></div></div>' +
+      (ult ? '<section class="box"><h3 style="margin:0">Prioridades del último briefing · ' + esc(corta(ult['Fecha'])) + '</h3><p style="margin-top:6px">' +
+        [ult['Prioridad 1'], ult['Prioridad 2'], ult['Prioridad 3']].filter(Boolean).map(esc).join(' · ') + '</p></section>' : '') +
+      '<div class="dos"><form class="box" id="fb"><h2>Briefing del domingo</h2><p class="sub">20 minutos. Elige tus tres prioridades de la semana.</p>' +
+      sel('p1', 1) + sel('p2', 2) + sel('p3', 3) + '<div class="row"><button class="btn teal">Guardar briefing</button></div></form>' +
+      '<form class="box" id="fd"><h2>Debrief del viernes</h2><p class="sub">10 minutos. Tres preguntas para cerrar la semana.</p>' +
+      '<label for="d1">¿Qué cerré?</label><textarea id="d1"></textarea><label for="d2">¿Qué me atascó?</label><textarea id="d2"></textarea>' +
+      '<label for="d3">¿Qué aprendí?</label><textarea id="d3"></textarea><div class="row"><button class="btn teal">Guardar debrief</button></div></form></div>' +
+      '<section class="box"><h2>Historial</h2><div class="hist">' + (D.ritual.length ? D.ritual.map(function (r) {
+        return '<div><b>' + esc(r['Tipo']) + ' · ' + esc(corta(r['Fecha'])) + '</b><br>' + (r['Tipo'] === 'Briefing'
+          ? [r['Prioridad 1'], r['Prioridad 2'], r['Prioridad 3']].filter(Boolean).map(esc).join(' · ')
+          : 'Cerré: ' + esc(r['Qué cerré']) + '<br>Me atascó: ' + esc(r['Qué me atascó']) + '<br>Aprendí: ' + esc(r['Qué aprendí'])) + '</div>';
+      }).join('') : '<p class="vacio">Todavía no hay registros.</p>') + '</div></section>';
+    function enviar(form, datos, msg) {
+      var b = form.querySelector('button'); b.disabled = true;
+      llamar('guardarRitual', { ritual: datos }).then(function () { pintar(); aviso(msg); }).catch(function (err) { b.disabled = false; aviso(err.message, true); });
+    }
+    $('#fb').onsubmit = function (e) { e.preventDefault(); enviar(e.target, { tipo: 'Briefing', p1: $('#p1').value, p2: $('#p2').value, p3: $('#p3').value }, 'Briefing guardado'); };
+    $('#fd').onsubmit = function (e) { e.preventDefault(); enviar(e.target, { tipo: 'Debrief', cerre: $('#d1').value, atasco: $('#d2').value, aprendi: $('#d3').value }, 'Debrief guardado'); };
+  }
+
+  iniciar();
+})();
+</script>
+</body>
+</html>
