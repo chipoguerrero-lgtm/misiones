@@ -41,15 +41,15 @@
  },
  {
   "id": "deonto-ley-universal",
-  "titulo": "La ley que todos firmarían",
-  "asignatura": "Ética Profesional",
-  "programa": "Deontología y deber ético",
-  "grupos": "Clase muestra",
-  "caso": "Definición y decálogo",
+  "titulo": "The law everyone would sign",
+  "asignatura": "Professional Ethics",
+  "programa": "Deontology and ethical duty · English B2",
+  "grupos": "Sample class",
+  "caso": "Definition and decalogue",
   "opcionales": [
    {
     "k": "ia",
-    "nombre": "Examen con IA (paso 3)"
+    "nombre": "AI examination (step 3)"
    }
   ]
  }

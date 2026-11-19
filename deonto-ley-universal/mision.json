@@ -1,169 +1,194 @@
 {
- "asignatura": "Ética Profesional",
- "programa": "Deontología y deber ético",
- "grupos": [
-  "Clase muestra",
-  "Otro grupo"
- ],
- "ficticio": "Casos y situaciones: ficticios, construidos para el ejercicio didáctico. No hay una definición «correcta»: se evalúa cómo la construyen y cómo la sostienen.",
  "id": "deonto-ley-universal",
- "titulo": "La ley que todos firmarían",
- "formato": "Misión exprés · clase muestra",
+ "idioma": "en",
+ "titulo": "The law everyone would sign",
+ "asignatura": "Professional Ethics",
+ "programa": "Deontology and ethical duty",
+ "formato": "Express mission · sample class · English B2",
  "descripcion": "Definición en 23 palabras puesta a prueba por un examinador kantiano; después, decálogo personal.",
- "lead": "Hoy van a construir, en pareja, una definición de <b>deontología</b> de 23 palabras y, después, cada quien escribirá su propio <b>decálogo</b> profesional.",
+ "grupos": [
+  "Sample class",
+  "Other group"
+ ],
+ "pedirMatricula": false,
+ "botones": {
+  "simple": "Español sencillo",
+  "bv": "High contrast · Alto contraste"
+ },
+ "botonSimpleLang": "es",
+ "opcionales": {
+  "ia": {
+   "nombre": "AI examination (step 3)",
+   "porDefecto": false
+  }
+ },
+ "lead": "Today you will build, in pairs, a 23-word definition of <b>deontology</b>. Then each of you will write your own professional <b>decalogue</b>: ten rules to live by at work.",
  "leadSimple": "1. En pareja escriben qué es la <b>deontología</b> en 23 palabras. 2. Cada quien escribe 10 reglas para su vida profesional.",
  "regla": {
-  "titulo": "Regla de oro: la definición y el decálogo son suyos.",
-  "texto": "Escríbanlos sin IA. Se evalúa su razonamiento, no un texto generado.",
-  "textoSimple": "Escriban sin IA."
+  "titulo": "Golden rule: the definition and the decalogue are yours.",
+  "texto": "Write them without AI. What is assessed is your reasoning, not a generated text.",
+  "textoSimple": "Primero escriben ustedes, sin IA. Escriban en inglés."
  },
+ "ficticio": "All cases and situations are fictional, built for this exercise. There is no single “correct” definition: what is assessed is how you build it and how you defend it.",
  "pasos": [
   {
    "tipo": "ficha",
-   "titulo": "¿Qué harías?",
-   "nav": "Apertura",
+   "titulo": "What would you do?",
+   "nav": "Opening",
    "tiempo": "8 min",
    "minutos": 8,
-   "intro": "Seis situaciones. Nadie te ve y nadie lo va a saber. Marca qué harías en cada una y, en pareja, comparen: ¿lo harían <b>aunque todo el mundo hiciera lo mismo</b>?",
+   "intro": "Six situations. Nobody can see you and nobody will ever find out. Choose what you would do in each one, then compare with your partner: would you still do it <b>if everyone in the world did the same</b>?",
    "introSimple": "6 situaciones. Nadie te ve. Marca qué harías. Luego comparen en pareja.",
-   "fichaTitulo": "Tus decisiones",
+   "recursosTitulo": "Kant's question",
+   "recursos": [
+    {
+     "titulo": "Categorical imperative",
+     "html": "“Act as if your action were to become a universal law.” Do your decisions pass that test?"
+    }
+   ],
+   "fichaTitulo": "Your decisions",
    "campos": [
     {
      "tipo": "radio",
      "k": "d_cartera",
-     "label": "<b>A.</b> Encuentras una cartera en el transporte público, con dinero y una identificación. Hoy solo te alcanza para comer o para el pasaje de regreso.",
+     "label": "<b>A.</b> You find a wallet on public transport, with cash and an ID card inside. Today you only have enough money for lunch or for your bus fare home.",
      "opciones": [
-      "La devuelvo completa",
-      "Tomo solo el pasaje y la devuelvo",
-      "Me la quedo"
-     ]
+      "I return it untouched",
+      "I take my fare and return the rest",
+      "I keep it"
+     ],
+     "labelSimple": "<b>A.</b> Encuentras una cartera con dinero. Solo tienes dinero para comer o para el camión."
     },
     {
      "tipo": "radio",
      "k": "d_examen",
-     "label": "<b>B.</b> Ves a tu amigo copiar un examen por WhatsApp antes de entregarlo.",
+     "label": "<b>B.</b> You see your friend copying exam answers from WhatsApp just before handing in the paper.",
      "opciones": [
-      "Le digo que no lo haga",
-      "Aviso al profesor",
-      "No hago nada"
-     ]
+      "I tell him to stop",
+      "I tell the teacher",
+      "I do nothing"
+     ],
+     "labelSimple": "<b>B.</b> Tu amigo copia en el examen con WhatsApp."
     },
     {
      "tipo": "radio",
      "k": "d_cambio",
-     "label": "<b>C.</b> En la tienda te dan 200 pesos de más en el cambio y ya saliste.",
+     "label": "<b>C.</b> At a shop, the cashier gives you 200 pesos too much in change, and you have already left.",
      "opciones": [
-      "Regreso a devolverlos",
-      "Me los quedo: fue su error"
-     ]
+      "I go back and return it",
+      "I keep it: it was their mistake"
+     ],
+     "labelSimple": "<b>C.</b> En la tienda te dan 200 pesos de más."
     },
     {
      "tipo": "radio",
      "k": "d_firma",
-     "label": "<b>D.</b> Tu equipo te pide firmar que revisaste un reporte que no leíste, porque la entrega es en una hora.",
+     "label": "<b>D.</b> Your team asks you to sign that you checked a report you have not read, because the deadline is in one hour.",
      "opciones": [
-      "Firmo",
-      "No firmo hasta leerlo",
-      "Firmo y lo leo después"
-     ]
+      "I sign",
+      "I don't sign until I read it",
+      "I sign and read it later"
+     ],
+     "labelSimple": "<b>D.</b> Tu equipo te pide firmar un reporte que no leíste."
     },
     {
      "tipo": "radio",
      "k": "d_ia",
-     "label": "<b>E.</b> Puedes entregar una tarea hecha por completo con IA y el profesor nunca lo notaría.",
+     "label": "<b>E.</b> You could hand in an assignment written entirely by AI, and the teacher would never notice.",
      "opciones": [
-      "La entrego así",
-      "La hago yo",
-      "Uso la IA solo para revisar"
-     ]
+      "I hand it in as it is",
+      "I do it myself",
+      "I use AI only to check my work"
+     ],
+     "labelSimple": "<b>E.</b> Puedes entregar una tarea hecha toda con IA. El profesor no lo sabría."
     },
     {
      "tipo": "radio",
      "k": "d_cliente",
-     "label": "<b>F.</b> Tu jefe te pide decirle a un cliente que el producto está listo cuando todavía tiene fallas.",
+     "label": "<b>F.</b> Your boss asks you to tell a client that the product is ready, although it still has faults.",
      "opciones": [
-      "Lo digo: es una orden",
-      "Digo la verdad al cliente",
-      "Hablo antes con mi jefe"
-     ]
+      "I say it: it's an order",
+      "I tell the client the truth",
+      "I talk to my boss first"
+     ],
+     "labelSimple": "<b>F.</b> Tu jefe te pide mentir a un cliente: decir que el producto está listo."
     },
     {
      "tipo": "text",
      "k": "universal",
-     "label": "¿En cuál de las seis tu respuesta <b>no</b> aguantaría ser ley para todos?",
-     "hint": "Escribe la letra y una línea de por qué."
-    }
-   ],
-   "recursosTitulo": "La pregunta de Kant",
-   "recursos": [
-    {
-     "titulo": "Imperativo categórico",
-     "html": "«Obra como si tu acción fuera a convertirse en ley universal». ¿Tus decisiones aguantan esa prueba?"
+     "label": "In which of the six would your answer <b>not</b> work as a law for everyone?",
+     "hint": "Write the letter and one line explaining why.",
+     "labelSimple": "¿Cuál de tus 6 respuestas <b>no</b> sería buena si todos hicieran lo mismo?"
     }
    ]
   },
   {
    "tipo": "ficha",
-   "titulo": "Fase 1 · Definan la deontología",
-   "nav": "Fase 1",
-   "tiempo": "10 min · sin IA",
+   "titulo": "Phase 1 · Define deontology",
+   "nav": "Phase 1",
+   "tiempo": "10 min · no AI",
    "minutos": 10,
-   "intro": "Usen las palabras clave como piezas. Pueden usar todas o solo algunas, pero la definición debe sonar a ustedes, no a diccionario.",
+   "intro": "Use the key words as building blocks. You can use all of them or only some, but the definition must sound like you, not like a dictionary.",
    "introSimple": "Usen estas palabras para explicar qué es la deontología. Máximo 26 palabras.",
-   "clavesTitulo": "Palabras clave",
    "claves": [
     {
-     "palabra": "Deber",
+     "palabra": "Duty",
      "raiz": [
+      "dut",
       "deber"
      ],
-     "glosa": "Lo que debo hacer aunque no me convenga."
+     "glosa": "What I must do, even when it is not convenient."
     },
     {
-     "palabra": "Ley",
+     "palabra": "Law",
      "raiz": [
+      "law",
       "ley"
      ],
-     "glosa": "Una regla que obliga a todos por igual."
+     "glosa": "A rule that binds everyone equally."
     },
     {
      "palabra": "Universal",
      "raiz": [
       "universal"
      ],
-     "glosa": "Válido para cualquier persona, en cualquier lugar."
+     "glosa": "Valid for any person, anywhere."
     },
     {
-     "palabra": "Respeto",
+     "palabra": "Respect",
      "raiz": [
+      "respect",
       "respet"
      ],
-     "glosa": "Tratar a la persona como fin, nunca solo como medio."
+     "glosa": "Treating a person as an end, never only as a means."
     },
     {
-     "palabra": "Racionalidad",
+     "palabra": "Rationality",
      "raiz": [
+      "rational",
+      "reason",
       "racional",
       "razon"
      ],
-     "glosa": "La razón, no el gusto, decide qué es correcto."
+     "glosa": "Reason, not taste, decides what is right."
     },
     {
-     "palabra": "Obligación",
+     "palabra": "Obligation",
      "raiz": [
-      "obliga"
+      "oblig"
      ],
-     "glosa": "El vínculo que me ata a cumplir el deber."
+     "glosa": "The bond that ties me to doing my duty."
     }
    ],
-   "cita": "«El deber es la necesidad de una acción por respeto a la ley». <br><small>Kant, <i>Fundamentación de la metafísica de las costumbres</i> (1785/1993)</small>",
-   "fichaTitulo": "Su definición",
+   "cita": "“Duty is the necessity of an action from respect for the law.” <br><small>Kant, <i>Groundwork of the Metaphysics of Morals</i> (1785/1993)</small>",
+   "fichaTitulo": "Your definition",
    "campos": [
     {
      "tipo": "text",
      "k": "pareja",
-     "label": "Integrantes de la pareja",
-     "hint": "Nombre de los dos. Cada quien registra su nombre arriba para enviar."
+     "label": "Pair members",
+     "hint": "Both names. Each of you also writes your own name at the top of the page in order to send.",
+     "labelSimple": "Nombres de la pareja"
     },
     {
      "tipo": "palabras",
@@ -174,79 +199,87 @@
      "minClaves": 0,
      "claves": [
       {
-       "palabra": "Deber",
+       "palabra": "Duty",
        "raiz": [
+        "dut",
         "deber"
        ],
-       "glosa": "Lo que debo hacer aunque no me convenga."
+       "glosa": "What I must do, even when it is not convenient."
       },
       {
-       "palabra": "Ley",
+       "palabra": "Law",
        "raiz": [
+        "law",
         "ley"
        ],
-       "glosa": "Una regla que obliga a todos por igual."
+       "glosa": "A rule that binds everyone equally."
       },
       {
        "palabra": "Universal",
        "raiz": [
         "universal"
        ],
-       "glosa": "Válido para cualquier persona, en cualquier lugar."
+       "glosa": "Valid for any person, anywhere."
       },
       {
-       "palabra": "Respeto",
+       "palabra": "Respect",
        "raiz": [
+        "respect",
         "respet"
        ],
-       "glosa": "Tratar a la persona como fin, nunca solo como medio."
+       "glosa": "Treating a person as an end, never only as a means."
       },
       {
-       "palabra": "Racionalidad",
+       "palabra": "Rationality",
        "raiz": [
+        "rational",
+        "reason",
         "racional",
         "razon"
        ],
-       "glosa": "La razón, no el gusto, decide qué es correcto."
+       "glosa": "Reason, not taste, decides what is right."
       },
       {
-       "palabra": "Obligación",
+       "palabra": "Obligation",
        "raiz": [
-        "obliga"
+        "oblig"
        ],
-       "glosa": "El vínculo que me ata a cumplir el deber."
+       "glosa": "The bond that ties me to doing my duty."
       }
      ],
-     "label": "Para nosotros, la deontología es…",
-     "hint": "Escríbanla entre los dos. Exactamente 23 palabras es la meta; se acepta de 20 a 26. El contador las cuenta por ustedes."
+     "label": "For us, deontology is…",
+     "hint": "Write it together. The target is exactly 23 words; anything from 20 to 26 is accepted. The counter does the counting for you.",
+     "labelSimple": "Para nosotros, la deontología es… (en inglés, 20 a 26 palabras)"
     },
     {
      "tipo": "text",
      "k": "descartada",
-     "label": "Una palabra clave que decidimos no usar, y por qué",
-     "hint": "Decidir qué se queda fuera también es pensar."
+     "label": "One key word we decided not to use, and why",
+     "hint": "Deciding what to leave out is also thinking.",
+     "labelSimple": "Una palabra que no usamos y por qué"
     }
    ]
   },
   {
    "tipo": "ia",
-   "titulo": "El examinador de la ley universal",
-   "nav": "Examen con IA",
-   "tiempo": "10 min · con IA · opcional",
-   "intro": "La IA hará de examinador kantiano: va a probar su definición contra casos concretos. Máximo cuatro rondas.",
+   "opcional": "ia",
+   "titulo": "The examiner of the universal law",
+   "nav": "AI examination",
+   "tiempo": "10 min · with AI · optional",
+   "intro": "The AI will act as a Kantian examiner: it will test your definition against concrete cases. Four rounds at most.",
    "introSimple": "La IA hace preguntas difíciles sobre su definición. Respondan con razones.",
    "voces": [
     {
-     "nombre": "Lo que hará",
-     "texto": "Aplicar su definición a la cartera y al examen, y buscar huecos."
+     "nombre": "What it will do",
+     "texto": "Apply your definition to the wallet and the exam, and look for gaps."
     },
     {
-     "nombre": "Lo que no hará",
-     "texto": "Escribir la definición por ustedes ni decirles cuál es la correcta."
+     "nombre": "What it won't do",
+     "texto": "Write the definition for you or tell you which one is correct."
     }
    ],
-   "aviso": "En la tercera ronda el examinador traerá una <b>crítica de Levinas</b>: las reglas universales pueden ignorar el sufrimiento de una persona concreta. Ahí decidirán si ajustan su definición.",
-   "gateTexto": "Completen la Fase 1 (definición de 20 a 26 palabras) para habilitar el examen.",
+   "aviso": "In the third round the examiner will bring in <b>Levinas's critique</b>: universal rules may ignore the suffering of a real person. That is when you decide whether to adjust your definition.",
+   "gateTexto": "Complete Phase 1 (a definition of 20 to 26 words) to unlock the examination.",
    "requeridos": [
     "definicion"
    ],
@@ -255,50 +288,49 @@
     "url": "https://chatgpt.com/"
    },
    "prompt": [
-    "Actúa como un examinador kantiano en una clase universitaria de Ética Profesional. Somos una pareja de estudiantes.",
+    "Act as a Kantian examiner in a university Professional Ethics class taught in English. We are a pair of students with an upper-intermediate (B2) level of English.",
     "",
-    "Al final de este mensaje está la definición de deontología que escribimos sin IA, con entre 20 y 26 palabras.",
+    "At the end of this message is the definition of deontology that we wrote without AI, in 20 to 26 words.",
     "",
-    "FORMATO: texto claro, párrafos cortos, una sola pregunta por ronda. No uses audio.",
+    "FORMAT: write in clear B2-level English, in short paragraphs, with one question per round. Do not use audio. If we make language mistakes, do not correct them unless they change the meaning.",
     "",
-    "Reglas:",
-    "1. Empieza diciendo en una frase qué idea central reconoces en nuestra definición. Después pregúntanos cómo resolvería, con esa definición, este caso: encontramos una cartera con dinero e identificación, nadie nos vio y no nos alcanza para comer.",
-    "2. En la segunda ronda aplica la prueba del imperativo categórico: pregúntanos si nuestra definición distingue entre actuar por deber y actuar por conveniencia o por miedo a ser descubiertos.",
-    "3. En la tercera ronda presenta la crítica de Emmanuel Levinas: la ética empieza en la responsabilidad ante el rostro del Otro, y una regla universal puede ignorar el sufrimiento de una persona concreta. Pregúntanos si nuestra definición deja lugar para esa persona.",
-    "4. En la cuarta ronda pídenos reescribir la definición con 23 palabras (se aceptan de 20 a 26). No la escribas tú, no sugieras frases ni palabras para completarla, y no digas cuál versión es correcta.",
-    "5. Cierra preguntando qué palabra de nuestra definición cambió más y por qué."
-   ],
-   "opcional": "ia"
+    "Rules:",
+    "1. Start by saying, in one sentence, which central idea you recognise in our definition. Then ask us how, using that definition, we would solve this case: we find a wallet with cash and an ID, nobody saw us, and we do not have enough money for lunch.",
+    "2. In the second round, apply the test of the categorical imperative: ask us whether our definition distinguishes between acting from duty and acting out of convenience or fear of being caught.",
+    "3. In the third round, present Emmanuel Levinas's critique: ethics begins with responsibility before the face of the Other, and a universal rule may ignore the suffering of a real person. Ask us whether our definition leaves room for that person.",
+    "4. In the fourth round, ask us to rewrite the definition in 23 words (20 to 26 are accepted). Do not write it for us, do not suggest phrases or words to complete it, and do not say which version is correct.",
+    "5. Finish by asking which word of our definition changed the most, and why."
+   ]
   },
   {
    "tipo": "entrega",
-   "titulo": "Fase 2 · Mi decálogo personal",
-   "nav": "Fase 2",
-   "tiempo": "12 min · sin IA",
+   "titulo": "Phase 2 · My personal decalogue",
+   "nav": "Phase 2",
+   "tiempo": "12 min · no AI",
    "minutos": 12,
-   "intro": "Individual. Usa las preguntas guía como punto de partida: no hay que responderlas todas, sirven para encontrar tus reglas. Al terminar, envía tu trabajo.",
+   "intro": "Individual work. Use the guiding questions as a starting point: you don't need to answer them all; they are there to help you find your rules. When you finish, send your work.",
    "introSimple": "Solo. Lee las preguntas y escribe 10 reglas. Después envía.",
-   "recursosTitulo": "Preguntas guía",
+   "recursosTitulo": "Guiding questions",
    "recursos": [
     {
-     "titulo": "1 · Mi deber profesional",
-     "html": "¿Qué le debo a quien recibe mi trabajo, aunque nadie me supervise? ¿Qué haría siempre, aunque me costara tiempo o dinero?"
+     "titulo": "1 · My professional duty",
+     "html": "What do I owe the people who receive my work, even when nobody is supervising me? What would I always do, even if it cost me time or money?"
     },
     {
-     "titulo": "2 · La prueba universal",
-     "html": "Si todos los profesionales de mi área siguieran esta regla, ¿el mundo funcionaría mejor o se volvería imposible?"
+     "titulo": "2 · The universal test",
+     "html": "If every professional in my field followed this rule, would the world work better, or would it become impossible?"
     },
     {
-     "titulo": "3 · Mis valores morales",
-     "html": "¿Qué valor no negociaría ni con mi jefe ni con un cliente? ¿Qué nunca haría, aunque fuera legal?"
+     "titulo": "3 · My moral values",
+     "html": "Which value would I never negotiate, not even with my boss or a client? What would I never do, even if it were legal?"
     },
     {
-     "titulo": "4 · Mis metas personales",
-     "html": "¿Qué tipo de profesional quiero ser en diez años? ¿Qué regla me ayuda a llegar ahí sin pasar por encima de nadie?"
+     "titulo": "4 · My personal goals",
+     "html": "What kind of professional do I want to be in ten years? Which rule helps me get there without stepping on anyone?"
     },
     {
-     "titulo": "5 · El Otro (Levinas)",
-     "html": "¿A quién podría dañar mi regla si la aplico sin mirar a la persona concreta que tengo enfrente?"
+     "titulo": "5 · The Other (Levinas)",
+     "html": "Who could my rule hurt if I apply it without looking at the real person in front of me?"
     }
    ],
    "campos": [
@@ -306,18 +338,21 @@
      "tipo": "lista",
      "k": "decalogo",
      "n": 10,
-     "item": "Regla",
-     "label": "Mi decálogo personal",
-     "hint": "Diez reglas cortas, cada una empezando con un verbo: «Siempre…», «Nunca…», «Reconozco…».",
+     "item": "Rule",
+     "itemPlural": "Rules",
+     "label": "My personal decalogue",
+     "hint": "Ten short rules, each starting with a verb: “Always…”, “Never…”, “I acknowledge…”.",
      "placeholders": [
-      "Siempre…",
-      "Nunca…"
-     ]
+      "Always…",
+      "Never…"
+     ],
+     "labelSimple": "Mis 10 reglas (en inglés)"
     },
     {
      "tipo": "textarea",
      "k": "dificil",
-     "label": "La regla de mi decálogo que más me costaría cumplir, y por qué"
+     "label": "The rule in my decalogue that would be hardest for me to keep, and why",
+     "labelSimple": "La regla más difícil para mí y por qué"
     },
     {
      "tipo": "palabras",
@@ -328,60 +363,67 @@
      "minClaves": 0,
      "claves": [
       {
-       "palabra": "Deber",
+       "palabra": "Duty",
        "raiz": [
+        "dut",
         "deber"
        ],
-       "glosa": "Lo que debo hacer aunque no me convenga."
+       "glosa": "What I must do, even when it is not convenient."
       },
       {
-       "palabra": "Ley",
+       "palabra": "Law",
        "raiz": [
+        "law",
         "ley"
        ],
-       "glosa": "Una regla que obliga a todos por igual."
+       "glosa": "A rule that binds everyone equally."
       },
       {
        "palabra": "Universal",
        "raiz": [
         "universal"
        ],
-       "glosa": "Válido para cualquier persona, en cualquier lugar."
+       "glosa": "Valid for any person, anywhere."
       },
       {
-       "palabra": "Respeto",
+       "palabra": "Respect",
        "raiz": [
+        "respect",
         "respet"
        ],
-       "glosa": "Tratar a la persona como fin, nunca solo como medio."
+       "glosa": "Treating a person as an end, never only as a means."
       },
       {
-       "palabra": "Racionalidad",
+       "palabra": "Rationality",
        "raiz": [
+        "rational",
+        "reason",
         "racional",
         "razon"
        ],
-       "glosa": "La razón, no el gusto, decide qué es correcto."
+       "glosa": "Reason, not taste, decides what is right."
       },
       {
-       "palabra": "Obligación",
+       "palabra": "Obligation",
        "raiz": [
-        "obliga"
+        "oblig"
        ],
-       "glosa": "El vínculo que me ata a cumplir el deber."
+       "glosa": "The bond that ties me to doing my duty."
       }
      ],
-     "label": "Nuestra definición final, después del examen",
-     "hint": "Escríbanla entre los dos. Exactamente 23 palabras es la meta; se acepta de 20 a 26. El contador las cuenta por ustedes.",
-     "soloSi": "ia"
+     "label": "Our final definition, after the examination",
+     "hint": "Write it together. The target is exactly 23 words; anything from 20 to 26 is accepted. The counter does the counting for you.",
+     "soloSi": "ia",
+     "labelSimple": "Nuestra definición final, después de la IA"
     },
     {
      "tipo": "text",
      "k": "enlace",
-     "label": "Enlace de la conversación",
+     "label": "Link to the conversation",
      "placeholder": "https://chatgpt.com/share/…",
      "soloSi": "ia",
-     "hint": "En ChatGPT: Compartir → Copiar enlace."
+     "hint": "In ChatGPT: Share → Copy link.",
+     "labelSimple": "Enlace del chat"
     }
    ],
    "requeridos": [
@@ -391,76 +433,69 @@
     "definicion_final",
     "enlace"
    ],
-   "boton": "Enviar mi trabajo",
+   "boton": "Send my work",
    "rubrica": {
-    "titulo": "Cómo se evalúa · 4 dimensiones, 16 puntos",
+    "titulo": "How it is assessed · 4 criteria, 16 points",
     "encabezados": [
-     "Dimensión",
-     "Nivel 4 · Avanzado"
+     "Criterion",
+     "Level 4 · Advanced"
     ],
     "filas": [
      [
-      "Definición",
-      "Integra el deber, la universalidad y el respeto en 20 a 26 palabras propias, sin copiar la cita de Kant."
+      "Definition",
+      "Combines duty, universality and respect in 20 to 26 words of your own, without copying Kant's quote."
      ],
      [
-      "Prueba universal",
-      "Aplica la definición a un caso concreto y distingue deber de conveniencia."
+      "Universal test",
+      "Applies the definition to a concrete case and tells duty apart from convenience."
      ],
      [
-      "Crítica y ajuste",
-      "Responde a la crítica de Levinas y justifica si ajustan o mantienen la definición."
+      "Critique and adjustment",
+      "Responds to Levinas's critique and justifies whether the definition changes or stays the same."
      ],
      [
-      "Decálogo",
-      "Diez reglas accionables, coherentes con su definición y con su futuro ejercicio profesional."
+      "Decalogue",
+      "Ten actionable rules, consistent with the definition and with your future professional practice."
      ]
     ],
-    "nota": "La conversión a calificación corresponde al programa institucional."
+    "nota": "Conversion to a final grade follows the institutional programme."
    },
    "rubricaSin": {
     "ia": {
-     "titulo": "Cómo se evalúa · 4 dimensiones, 16 puntos",
+     "titulo": "How it is assessed · 4 criteria, 16 points",
      "encabezados": [
-      "Dimensión",
-      "Nivel 4 · Avanzado"
+      "Criterion",
+      "Level 4 · Advanced"
      ],
      "filas": [
       [
-       "Definición",
-       "Integra el deber, la universalidad y el respeto en 20 a 26 palabras propias, sin copiar la cita de Kant."
+       "Definition",
+       "Combines duty, universality and respect in 20 to 26 words of your own, without copying Kant's quote."
       ],
       [
-       "Prueba universal",
-       "Identifica en la apertura una decisión propia que no resistiría ser ley para todos y explica por qué."
+       "Universal test",
+       "Identifies, in the opening, one of your own decisions that would not hold as a law for everyone, and explains why."
       ],
       [
-       "Decálogo",
-       "Diez reglas accionables, formuladas como deberes y no como deseos, ligadas a su futuro ejercicio profesional."
+       "Decalogue",
+       "Ten actionable rules, written as duties rather than wishes, linked to your future professional practice."
       ],
       [
-       "Coherencia y reflexión",
-       "Las reglas son coherentes con su definición y reconoce con honestidad cuál le costaría más cumplir."
+       "Consistency and reflection",
+       "The rules are consistent with your definition, and you honestly recognise which one would be hardest to keep."
       ]
      ],
-     "nota": "La conversión a calificación corresponde al programa institucional."
+     "nota": "Conversion to a final grade follows the institutional programme."
     }
    }
   }
  ],
  "ficha": [
-  "NUESTRA DEFINICIÓN (sin IA)",
-  "Pareja: {pareja}",
-  "Definición: {definicion}",
-  "Palabra clave descartada: {descartada}",
+  "OUR DEFINITION (written without AI)",
+  "Pair: {pareja}",
+  "Definition: {definicion}",
+  "Key word we left out: {descartada}",
   "",
-  "MI DECÁLOGO{decalogo}"
- ],
- "pedirMatricula": false,
- "opcionales": {
-  "ia": {
-   "nombre": "Examen con IA (paso 3)",
-   "porDefecto": false
-  }
- }
+  "MY DECALOGUE{decalogo}"
+ ]
 }

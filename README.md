@@ -15,7 +15,7 @@ Todas las misiones comparten cuatro reglas: el alumno decide solo primero, sin I
 | El comité de dictamen · El sensor que se detiene solo | `comite-irc/` | Habilidades del Pensamiento · IRC MPR 02 |
 | El comité de dictamen · Once de cuarenta mil | `comite-isa/` | Habilidades del Pensamiento · ISA SA 04 |
 | Las 100 000 dosis | `dosis-100000/` | Ética Profesional |
-| La ley que todos firmarían (deontología) | `deonto-ley-universal/` | Ética Profesional · clase muestra |
+| The law everyone would sign (deontología, inglés B2) | `deonto-ley-universal/` | Ética Profesional · clase muestra |
 
 ## Cómo funciona
 

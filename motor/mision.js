@@ -27,7 +27,8 @@
       who: '¿Quién eres?', whoHint: 'Se usa solo para que el docente reciba tus envíos. Se guarda en este navegador.', name: 'Nombre completo', id: 'Matrícula', group: 'Grupo', choose: 'Elige…',
       listen: '🔊 Escuchar', stop: '⏹ Detener', noVoice: 'Sin voz en este navegador', listenAria: 'Escuchar este paso en voz alta', saved: 'Guardado en este navegador.',
       caseText: 'El caso por escrito', noVideo: 'Tu navegador no reproduce video. Lee el caso abajo.', docs: 'Para documentarte', gate: 'Completa tu ficha del paso anterior para habilitar este paso.',
-      loadFail: '<h1>No se pudo cargar la misión</h1><p>Recarga la página. Si el problema sigue, avisa a tu docente.</p>', voice: 'es-MX', locale: 'es-MX', q: ['«', '»'] },
+      loadFail: '<h1>No se pudo cargar la misión</h1><p>Recarga la página. Si el problema sigue, avisa a tu docente.</p>', voice: 'es-MX', locale: 'es-MX', q: ['«', '»'],
+      words: 'palabras', wcount: 'Palabras: {n} · meta {m} (de {a} a {b})', extra: ' · sobran {n}', short: ' · faltan {n}', keys: 'Palabras clave usadas: ', minKeys: ' · usa al menos {n}', listDone: '{i} escritas: {f} de {n}', item: 'Regla', items: 'Reglas', keysTitle: 'Palabras clave' },
     en: { sendFirst: 'Before sending, write your name and choose your group at the top of the page.', test: 'Test mode: this page is not connected to your tutor’s sheet yet, so nothing was sent.',
       sending: 'Sending…', sent: '✓ Sent on {d} · If you correct something, you can send it again: the last one counts.', fail: 'It could not be sent. Check your connection and try again; your work is still saved in this browser.',
       copied: 'Copied!', send: 'Send', open: 'Open {p}, paste everything into a new chat and send it.', copyStep: 'Press <b>Copy instructions and card</b>.',
@@ -39,9 +40,10 @@
       who: 'Who are you?', whoHint: 'Only used so that your tutor receives what you send. It is saved in this browser.', name: 'Full name', id: 'Student ID', group: 'Group', choose: 'Choose…',
       listen: '🔊 Listen', stop: '⏹ Stop', noVoice: 'No voice in this browser', listenAria: 'Listen to this step', saved: 'Saved in this browser.',
       caseText: 'The case in writing', noVideo: 'Your browser cannot play video. Read the case below.', docs: 'Before you decide', gate: 'Complete your card in the previous step to unlock this step.',
-      loadFail: '<h1>The mission could not load</h1><p>Reload the page. If it still fails, tell your tutor.</p>', voice: 'en-US', locale: 'en-US', q: ['“', '”'] }
+      loadFail: '<h1>The mission could not load</h1><p>Reload the page. If it still fails, tell your tutor.</p>', voice: 'en-US', locale: 'en-US', q: ['“', '”'],
+      words: 'words', wcount: 'Words: {n} · target {m} ({a} to {b})', extra: ' · {n} too many', short: ' · {n} to go', keys: 'Key words used: ', minKeys: ' · use at least {n}', listDone: '{i} written: {f} of {n}', item: 'Rule', items: 'Rules', keysTitle: 'Key words' }
   };
-  function T(k, vars) { var t = (TXT[(M && M.idioma) || 'es'] || TXT.es)[k]; if (vars) Object.keys(vars).forEach(function (v) { t = t.replace('{' + v + '}', vars[v]); }); return t; }
+  function T(k, vars) { var t = (TXT[(M && M.idioma) || 'es'] || TXT.es)[k]; if (vars) Object.keys(vars).forEach(function (v) { t = t.split('{' + v + '}').join(vars[v]); }); return t; }
 
   // ---------- utilidades ----------
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
@@ -54,7 +56,7 @@
   function store(k, v) { try { if (v === undefined) return JSON.parse(localStorage.getItem(k) || 'null'); localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return v === undefined ? null : false; } }
   function both(full, simple) {
     if (!simple) return full || '';
-    return '<div class="full-only">' + (full || '') + '</div><div class="simple-only">' + simple + '</div>';
+    return '<div class="full-only">' + (full || '') + '</div><div class="simple-only"' + (M && M.botonSimpleLang ? ' lang="' + M.botonSimpleLang + '"' : '') + '>' + simple + '</div>';
   }
   // ---------- campos especiales: palabras (rango) y lista numerada ----------
   var PAL = {}, LIS = {};
@@ -67,10 +69,15 @@
     return !!(data[k] && String(data[k]).trim());
   }
   function listaTexto(k) { var l = LIS[k], out = []; for (var i = 1; i <= l.n; i++) out.push('  ' + i + '. ' + ((data[k + '_' + i] || '').trim() || '—')); return '\n' + out.join('\n'); }
+  function lab(c) {
+    if (!c.labelSimple) return c.label;
+    var lg = M && M.botonSimpleLang ? ' lang="' + M.botonSimpleLang + '"' : '';
+    return '<span class="full-only">' + c.label + '</span><span class="simple-only"' + lg + '>' + c.labelSimple + '</span>';
+  }
   function fill(tpl, d) {
     return tpl.replace(/\{(\w+)\}/g, function (_, k) {
       if (LIS[k]) return listaTexto(k);
-      if (PAL[k] && d[k]) return d[k].trim() + ' (' + cuenta(d[k]) + ' palabras)';
+      if (PAL[k] && d[k]) return d[k].trim() + ' (' + cuenta(d[k]) + ' ' + T('words') + ')';
       if (k === 'reparto') return repartoTexto(d);
       var v = d[k]; return (v == null || v === '') ? '—' : v;
     });
@@ -98,9 +105,9 @@
       w.appendChild(g); return w;
     }
     var id = 'f-' + c.k;
-    var label = '<label class="q" for="' + id + '">' + c.label + (c.hint ? '<span class="hint">' + c.hint + '</span>' : '') + '</label>';
+    var label = '<label class="q" for="' + id + '">' + lab(c) + (c.hint ? '<span class="hint">' + c.hint + '</span>' : '') + '</label>';
     if (c.tipo === 'radio') {
-      w.innerHTML = '<label class="q">' + c.label + (c.hint ? '<span class="hint">' + c.hint + '</span>' : '') + '</label>';
+      w.innerHTML = '<label class="q">' + lab(c) + (c.hint ? '<span class="hint">' + c.hint + '</span>' : '') + '</label>';
       var rg = h('div', { 'class': 'radios', role: 'radiogroup', 'aria-label': c.label.replace(/<[^>]+>/g, '') });
       c.opciones.forEach(function (o) {
         var val = typeof o === 'string' ? o : o.valor, txt = typeof o === 'string' ? o : o.texto;
@@ -118,7 +125,7 @@
         return '<tr><td><label for="f-' + f.k + '">' + f.label + '</label>' + (f.nota ? '<span class="hint">' + f.nota + '</span>' : '') + '</td>' +
           '<td class="num"><input type="number" min="0" step="100" inputmode="numeric" id="f-' + f.k + '" data-k="' + f.k + '"></td></tr>';
       }).join('');
-      w.innerHTML = '<label class="q">' + c.label + (c.hint ? '<span class="hint">' + c.hint + '</span>' : '') + '</label>' +
+      w.innerHTML = '<label class="q">' + lab(c) + (c.hint ? '<span class="hint">' + c.hint + '</span>' : '') + '</label>' +
         '<div class="tablewrap"><table class="reparto"><tr><th>Grupo</th><th class="num">Dosis</th></tr>' + rows + '</table></div>' +
         '<p class="total" id="tot-' + c.k + '" aria-live="polite"></p>';
       return w;
@@ -132,8 +139,8 @@
     if (c.tipo === 'lista') {
       LIS[c.k] = c;
       var li = '';
-      for (var i = 1; i <= c.n; i++) li += '<li><label class="sr" for="' + id + '_' + i + '">' + (c.item || 'Regla') + ' ' + i + '</label><input type="text" id="' + id + '_' + i + '" data-k="' + c.k + '_' + i + '"' + (c.placeholders && c.placeholders[i - 1] ? ' placeholder="' + esc(c.placeholders[i - 1]) + '"' : '') + '></li>';
-      w.innerHTML = '<label class="q">' + c.label + (c.hint ? '<span class="hint">' + c.hint + '</span>' : '') + '</label><ol class="lista">' + li + '</ol><p class="total" id="lc-' + c.k + '" aria-live="polite"></p>';
+      for (var i = 1; i <= c.n; i++) li += '<li><label class="sr" for="' + id + '_' + i + '">' + (c.item || T('item')) + ' ' + i + '</label><input type="text" id="' + id + '_' + i + '" data-k="' + c.k + '_' + i + '"' + (c.placeholders && c.placeholders[i - 1] ? ' placeholder="' + esc(c.placeholders[i - 1]) + '"' : '') + '></li>';
+      w.innerHTML = '<label class="q">' + lab(c) + (c.hint ? '<span class="hint">' + c.hint + '</span>' : '') + '</label><ol class="lista">' + li + '</ol><p class="total" id="lc-' + c.k + '" aria-live="polite"></p>';
       return w;
     }
     if (c.tipo === 'textarea') { w.innerHTML = label + '<textarea id="' + id + '" data-k="' + c.k + '"></textarea>'; return w; }
@@ -235,7 +242,7 @@
         s.appendChild(t); timer(t, p.minutos);
       }
       if (p.claves) {
-        s.appendChild(h('h3', null, p.clavesTitulo || 'Palabras clave'));
+        s.appendChild(h('h3', null, p.clavesTitulo || T('keysTitle')));
         s.appendChild(h('div', { 'class': 'chips' }, p.claves.map(function (c) { return '<span class="chip"><b>' + c.palabra + '</b>' + (c.glosa ? '<small>' + c.glosa + '</small>' : '') + '</span>'; }).join('')));
       }
       if (p.cita) s.appendChild(h('blockquote', { 'class': 'cita' }, p.cita));
@@ -342,8 +349,8 @@
     var hd = h('header', { 'class': 'top' });
     hd.innerHTML =
       '<div class="a11y" role="group" aria-label="Opciones de accesibilidad">' +
-      '<button type="button" data-a="simple" aria-pressed="' + !!a11y.simple + '">' + T('simple') + '</button>' +
-      '<button type="button" data-a="bv" aria-pressed="' + !!a11y.bv + '">' + T('bv') + '</button>' +
+      '<button type="button" data-a="simple" aria-pressed="' + !!a11y.simple + '"' + (M.botonSimpleLang ? ' lang="' + M.botonSimpleLang + '"' : '') + '>' + ((M.botones || {}).simple || T('simple')) + '</button>' +
+      '<button type="button" data-a="bv" aria-pressed="' + !!a11y.bv + '">' + ((M.botones || {}).bv || T('bv')) + '</button>' +
       '<a href="../" style="align-self:center;font-weight:700">' + T('all') + '</a></div>' +
       '<div class="logos"><img src="../assets/logo_upsrj.png" alt="Universidad Politécnica de Santa Rosa Jáuregui"><img src="../assets/logo_iehl.png" alt="IEHL · Integral Education for Higher Learning"></div>' +
       '<div class="eyebrow">' + [M.asignatura, M.programa, M.formato || T('fmt')].filter(Boolean).join(' · ') + '</div>' +
@@ -402,14 +409,14 @@
       Object.keys(PAL).forEach(function (k) {
         var c = PAL[k], el = document.getElementById('wc-' + k); if (!el) return;
         var n = cuenta(data[k]), us = clavesUsadas(c, data[k]), okN = n >= c.min && n <= c.max, okC = us.length >= (c.minClaves || 0);
-        var msg = 'Palabras: ' + n + ' · meta ' + (c.meta || '') + ' (de ' + c.min + ' a ' + c.max + ')' + (okN ? ' ✓' : n > c.max ? ' · sobran ' + (n - c.max) : ' · faltan ' + (c.min - n));
-        if (c.claves) msg += ' — Palabras clave usadas: ' + us.length + (us.length ? ' (' + us.map(function (x) { return x.palabra.toLowerCase(); }).join(', ') + ')' : '') + (c.minClaves ? (okC ? ' ✓' : ' · usa al menos ' + c.minClaves) : '');
+        var msg = T('wcount', { n: n, m: c.meta || '', a: c.min, b: c.max }) + (okN ? ' ✓' : n > c.max ? T('extra', { n: n - c.max }) : T('short', { n: c.min - n }));
+        if (c.claves) msg += ' — ' + T('keys') + us.length + (us.length ? ' (' + us.map(function (x) { return x.palabra.toLowerCase(); }).join(', ') + ')' : '') + (c.minClaves ? (okC ? ' ✓' : T('minKeys', { n: c.minClaves })) : '');
         el.textContent = msg; el.className = 'total wc ' + (okN && okC ? 'ok' : n ? 'err' : '');
       });
       Object.keys(LIS).forEach(function (k) {
         var l = LIS[k], el = document.getElementById('lc-' + k), f = 0;
         for (var i = 1; i <= l.n; i++) if (data[k + '_' + i] && String(data[k + '_' + i]).trim()) f++;
-        if (el) { el.textContent = (l.itemPlural || 'Reglas') + ' escritas: ' + f + ' de ' + l.n + (f >= (l.min || l.n) ? ' ✓' : ''); el.className = 'total ' + (f >= (l.min || l.n) ? 'ok' : ''); }
+        if (el) { el.textContent = T('listDone', { i: l.itemPlural || T('items'), f: f, n: l.n }) + (f >= (l.min || l.n) ? ' ✓' : ''); el.className = 'total ' + (f >= (l.min || l.n) ? 'ok' : ''); }
       });
       refreshers.forEach(function (f) { f(); });
       var r = findReparto();
