@@ -89,6 +89,7 @@ body.bv input[type=date],body.bv input[type=url],body.bv input[type=password]{ba
   <button data-v="proyectos" class="on">Proyectos</button>
   <button data-v="dictamenes">Dictámenes<span class="n" id="nDict" hidden>0</span></button>
   <button data-v="ritual">Ritual</button>
+  <button data-v="misiones">Misiones</button>
   <button class="salir" id="salir">Cerrar sesión</button>
 </div></div>
 <main class="wrap" id="main"><p class="vacio">Cargando…</p></main>
@@ -104,9 +105,9 @@ body.bv input[type=date],body.bv input[type=url],body.bv input[type=password]{ba
 (function () {
   var API = (window.MISIONES_CONFIG && window.MISIONES_CONFIG.API_URL) || '';
   var KEY = 'mando-clave';
-  var CAT = {};
+  var CAT = {}, LISTA = [];
   fetch('../catalogo.json', { cache: 'no-cache' }).then(function (r) { return r.json(); })
-    .then(function (l) { l.forEach(function (m) { CAT[m.id] = m.titulo + ' · ' + m.caso; }); if (D && vista === 'dictamenes') pintar(); }).catch(function () {});
+    .then(function (l) { LISTA = l; l.forEach(function (m) { CAT[m.id] = m.titulo + ' · ' + m.caso; }); if (D && vista === 'dictamenes') pintar(); }).catch(function () {});
   function mision(id) { return CAT[id] || id; }
   var D = null, vista = 'proyectos', filtro = 'Activos', busca = '', clave = '';
   var $ = function (s) { return document.querySelector(s); };
@@ -181,9 +182,32 @@ body.bv input[type=date],body.bv input[type=url],body.bv input[type=password]{ba
     $('#tabs').hidden = false;
     var n = D.pendientes.length; $('#nDict').hidden = !n; $('#nDict').textContent = n;
     document.querySelectorAll('#tabs [data-v]').forEach(function (b) { b.classList.toggle('on', b.dataset.v === vista); });
-    ({ proyectos: vProyectos, dictamenes: vDictamenes, ritual: vRitual })[vista]();
+    ({ proyectos: vProyectos, dictamenes: vDictamenes, ritual: vRitual, misiones: vMisiones })[vista]();
   }
   document.querySelectorAll('#tabs [data-v]').forEach(function (b) { b.onclick = function () { vista = b.dataset.v; pintar(); }; });
+
+  /* ── Misiones: pasos opcionales que el docente activa ── */
+  function vMisiones() {
+    var aj = D.ajustes || {}, con = LISTA.filter(function (m) { return m.opcionales && m.opcionales.length; });
+    $('#main').innerHTML = '<section class="box"><h2>Pasos opcionales de las misiones</h2>' +
+      '<p class="sub">Lo que actives aquí aparece en la misión la próxima vez que los alumnos abran o recarguen la página.</p>' +
+      (con.length ? con.map(function (m) {
+        return '<div class="it" style="cursor:default"><b>' + esc(m.titulo) + '</b> <span class="sub">· ' + esc(m.asignatura) + ' · ' + esc(m.grupos || '') + '</span>' +
+          m.opcionales.map(function (o) {
+            var on = !!(aj[m.id] && aj[m.id][o.k]);
+            return '<label style="display:flex;gap:10px;align-items:center;margin-top:10px;font-weight:600"><input type="checkbox" data-m="' + esc(m.id) + '" data-o="' + esc(o.k) + '"' + (on ? ' checked' : '') + ' style="width:22px;height:22px"> ' +
+              esc(o.nombre) + ' <span class="sub">' + (on ? 'activado' : 'desactivado') + '</span></label>';
+          }).join('') + '</div>';
+      }).join('') : '<p class="vacio">Ninguna misión tiene pasos opcionales.</p>') + '</section>';
+    document.querySelectorAll('[data-m]').forEach(function (c) {
+      c.onchange = function () {
+        c.disabled = true;
+        llamar('guardarAjuste', { mision: c.dataset.m, opcion: c.dataset.o, valor: c.checked })
+          .then(function () { pintar(); aviso(c.checked ? 'Paso activado' : 'Paso desactivado'); })
+          .catch(function (err) { c.checked = !c.checked; c.disabled = false; aviso(err.message, true); });
+      };
+    });
+  }
 
   /* ── Proyectos ── */
   function activos() { return D.proyectos.filter(function (p) { return p['Estado'] !== 'Cerrado'; }); }

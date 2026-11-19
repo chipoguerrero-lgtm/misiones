@@ -15,6 +15,7 @@ Todas las misiones comparten cuatro reglas: el alumno decide solo primero, sin I
 | El comité de dictamen · El sensor que se detiene solo | `comite-irc/` | Habilidades del Pensamiento · IRC MPR 02 |
 | El comité de dictamen · Once de cuarenta mil | `comite-isa/` | Habilidades del Pensamiento · ISA SA 04 |
 | Las 100 000 dosis | `dosis-100000/` | Ética Profesional |
+| La ley que todos firmarían (deontología) | `deonto-ley-universal/` | Ética Profesional · clase muestra |
 
 ## Cómo funciona
 
@@ -59,6 +60,10 @@ Usa el mismo proyecto de Apps Script y la misma URL de `config.js` que las misio
 La sección Dictámenes cuenta, por misión y grupo, las entregas finales que todavía no tienen dictamen.
 
 **Reglas.** Ninguna calificación pasa a la hoja *Calificaciones* sin aprobación del docente. Se usa la rúbrica de cada misión (4 dimensiones, 16 puntos) o la de la asignatura; no se inventan escalas. Si alguien ve la clave, ejecuta **cambiarClaveMando** y entra con la nueva.
+
+## Pasos opcionales
+
+Una misión puede traer pasos que el docente activa o desactiva desde la pestaña **Misiones** del centro de mando (por ejemplo, el examen con IA de *La ley que todos firmarían*). En `mision.json`, el paso lleva `"opcional": "ia"` y los campos que dependen de él, `"soloSi": "ia"`; la misión declara `"opcionales"` y en `catalogo.json` se listan para que aparezcan en el panel. El cambio se ve cuando los alumnos abren o recargan la página. Si la misión no logra consultar el ajuste, usa el valor por defecto (desactivado).
 
 ## Agregar una misión nueva
 

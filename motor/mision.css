@@ -99,6 +99,17 @@ footer{padding:28px 16px 50px;color:var(--muted);font-size:14px;border-top:1px s
 .foot .logos{margin:0}
 .firma{height:40px;width:auto;opacity:.75}
 
+/* palabras clave, cita y lista numerada */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 6px}
+.chip{border:2px solid var(--blue);border-radius:14px;padding:8px 14px;background:var(--hatch);line-height:1.25}
+.chip b{display:block;font-family:'Kalam',cursive;font-size:22px;color:var(--blue)}
+.chip small{display:block;font-size:13px;color:var(--muted);max-width:200px}
+blockquote.cita{border-left:5px solid var(--yellow);padding:10px 18px;margin:14px 0;font-style:italic;background:#FFFBEA;border-radius:0 12px 12px 0}
+ol.lista{margin:6px 0 0 30px;display:grid;gap:8px}
+ol.lista li::marker{font-family:'Kalam',cursive;font-weight:700;color:var(--blue);font-size:20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+body.bv .chip,body.bv blockquote.cita{background:#000;color:#fff;border-color:#FFE600}
+
 /* Español simplificado: muestra los textos breves y oculta los largos */
 body.simple .simple-only{display:block}
 body.simple .full-only{display:none}

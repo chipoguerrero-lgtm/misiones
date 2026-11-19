@@ -38,5 +38,19 @@
   "programa": "Unit 2 · Topic 6 · Session 11",
   "grupos": "Groups 2, 07, 09, 10",
   "caso": "Daniel feels ready. Is he?"
+ },
+ {
+  "id": "deonto-ley-universal",
+  "titulo": "La ley que todos firmarían",
+  "asignatura": "Ética Profesional",
+  "programa": "Deontología y deber ético",
+  "grupos": "Clase muestra",
+  "caso": "Definición y decálogo",
+  "opcionales": [
+   {
+    "k": "ia",
+    "nombre": "Examen con IA (paso 3)"
+   }
+  ]
  }
 ]

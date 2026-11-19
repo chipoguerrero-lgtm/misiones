@@ -108,6 +108,7 @@ function mando_(body) {
   if (a === 'resolverDictamen') return mResolver_(body.id, body.calificacion, body.comentarios, body.decision);
   if (a === 'guardarRitual') return mGuardarRitual_(body.ritual || {});
   if (a === 'importar') { importarBuzonMando(); return mDatos_(); }
+  if (a === 'guardarAjuste') return mGuardarAjuste_(body.mision, body.opcion, body.valor);
   throw new Error('Acción desconocida.');
 }
 
@@ -133,8 +134,22 @@ function mDatos_() {
   [proyectos, pendientes, revisados, ritual].forEach(function (l) { l.forEach(function (r) { delete r._fila; }); });
   return {
     hoy: hoy, estados: MANDO_ESTADOS, proyectos: proyectos, pendientes: pendientes, revisados: revisados,
-    ritual: ritual.slice(-8).reverse(), sinDictamen: mSinDictamen_(dict)
+    ritual: ritual.slice(-8).reverse(), sinDictamen: mSinDictamen_(dict),
+    ajustes: JSON.parse(PropertiesService.getScriptProperties().getProperty('AJUSTES_MISIONES') || '{}')
   };
+}
+
+/** Activa o desactiva un paso opcional de una misión (por ejemplo, el examen con IA). */
+function mGuardarAjuste_(mision, opcion, valor) {
+  mision = String(mision || ''); opcion = String(opcion || '');
+  if (!/^[a-z0-9-]+$/.test(mision) || !/^[a-z0-9_]+$/.test(opcion)) throw new Error('Ajuste inválido.');
+  return mCandado_(function () {
+    var props = PropertiesService.getScriptProperties();
+    var todos = JSON.parse(props.getProperty('AJUSTES_MISIONES') || '{}');
+    todos[mision] = todos[mision] || {}; todos[mision][opcion] = !!valor;
+    props.setProperty('AJUSTES_MISIONES', JSON.stringify(todos));
+    return mDatos_();
+  });
 }
 
 /** Cuenta, por misión y grupo, las entregas finales de los alumnos que todavía no tienen dictamen. */

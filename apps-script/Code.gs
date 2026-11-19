@@ -40,8 +40,13 @@ function instalar() {
   Logger.log('Hoja creada: ' + ss.getUrl());
 }
 
-function doGet() {
-  return json_({ ok: true, app: 'Misiones exprés', version: 1 });
+function doGet(e) {
+  // Las misiones preguntan aquí qué pasos opcionales activó el docente (Mando.gs › guardarAjuste).
+  if (e && e.parameter && e.parameter.ajustes) {
+    var todos = JSON.parse(PropertiesService.getScriptProperties().getProperty('AJUSTES_MISIONES') || '{}');
+    return json_({ ok: true, ajustes: todos[String(e.parameter.mision || '')] || {} });
+  }
+  return json_({ ok: true, app: 'Misiones exprés', version: 2 });
 }
 
 function doPost(e) {

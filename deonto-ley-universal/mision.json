@@ -1,0 +1,466 @@
+{
+ "asignatura": "Ética Profesional",
+ "programa": "Deontología y deber ético",
+ "grupos": [
+  "Clase muestra",
+  "Otro grupo"
+ ],
+ "ficticio": "Casos y situaciones: ficticios, construidos para el ejercicio didáctico. No hay una definición «correcta»: se evalúa cómo la construyen y cómo la sostienen.",
+ "id": "deonto-ley-universal",
+ "titulo": "La ley que todos firmarían",
+ "formato": "Misión exprés · clase muestra",
+ "descripcion": "Definición en 23 palabras puesta a prueba por un examinador kantiano; después, decálogo personal.",
+ "lead": "Hoy van a construir, en pareja, una definición de <b>deontología</b> de 23 palabras y, después, cada quien escribirá su propio <b>decálogo</b> profesional.",
+ "leadSimple": "1. En pareja escriben qué es la <b>deontología</b> en 23 palabras. 2. Cada quien escribe 10 reglas para su vida profesional.",
+ "regla": {
+  "titulo": "Regla de oro: la definición y el decálogo son suyos.",
+  "texto": "Escríbanlos sin IA. Se evalúa su razonamiento, no un texto generado.",
+  "textoSimple": "Escriban sin IA."
+ },
+ "pasos": [
+  {
+   "tipo": "ficha",
+   "titulo": "¿Qué harías?",
+   "nav": "Apertura",
+   "tiempo": "8 min",
+   "minutos": 8,
+   "intro": "Seis situaciones. Nadie te ve y nadie lo va a saber. Marca qué harías en cada una y, en pareja, comparen: ¿lo harían <b>aunque todo el mundo hiciera lo mismo</b>?",
+   "introSimple": "6 situaciones. Nadie te ve. Marca qué harías. Luego comparen en pareja.",
+   "fichaTitulo": "Tus decisiones",
+   "campos": [
+    {
+     "tipo": "radio",
+     "k": "d_cartera",
+     "label": "<b>A.</b> Encuentras una cartera en el transporte público, con dinero y una identificación. Hoy solo te alcanza para comer o para el pasaje de regreso.",
+     "opciones": [
+      "La devuelvo completa",
+      "Tomo solo el pasaje y la devuelvo",
+      "Me la quedo"
+     ]
+    },
+    {
+     "tipo": "radio",
+     "k": "d_examen",
+     "label": "<b>B.</b> Ves a tu amigo copiar un examen por WhatsApp antes de entregarlo.",
+     "opciones": [
+      "Le digo que no lo haga",
+      "Aviso al profesor",
+      "No hago nada"
+     ]
+    },
+    {
+     "tipo": "radio",
+     "k": "d_cambio",
+     "label": "<b>C.</b> En la tienda te dan 200 pesos de más en el cambio y ya saliste.",
+     "opciones": [
+      "Regreso a devolverlos",
+      "Me los quedo: fue su error"
+     ]
+    },
+    {
+     "tipo": "radio",
+     "k": "d_firma",
+     "label": "<b>D.</b> Tu equipo te pide firmar que revisaste un reporte que no leíste, porque la entrega es en una hora.",
+     "opciones": [
+      "Firmo",
+      "No firmo hasta leerlo",
+      "Firmo y lo leo después"
+     ]
+    },
+    {
+     "tipo": "radio",
+     "k": "d_ia",
+     "label": "<b>E.</b> Puedes entregar una tarea hecha por completo con IA y el profesor nunca lo notaría.",
+     "opciones": [
+      "La entrego así",
+      "La hago yo",
+      "Uso la IA solo para revisar"
+     ]
+    },
+    {
+     "tipo": "radio",
+     "k": "d_cliente",
+     "label": "<b>F.</b> Tu jefe te pide decirle a un cliente que el producto está listo cuando todavía tiene fallas.",
+     "opciones": [
+      "Lo digo: es una orden",
+      "Digo la verdad al cliente",
+      "Hablo antes con mi jefe"
+     ]
+    },
+    {
+     "tipo": "text",
+     "k": "universal",
+     "label": "¿En cuál de las seis tu respuesta <b>no</b> aguantaría ser ley para todos?",
+     "hint": "Escribe la letra y una línea de por qué."
+    }
+   ],
+   "recursosTitulo": "La pregunta de Kant",
+   "recursos": [
+    {
+     "titulo": "Imperativo categórico",
+     "html": "«Obra como si tu acción fuera a convertirse en ley universal». ¿Tus decisiones aguantan esa prueba?"
+    }
+   ]
+  },
+  {
+   "tipo": "ficha",
+   "titulo": "Fase 1 · Definan la deontología",
+   "nav": "Fase 1",
+   "tiempo": "10 min · sin IA",
+   "minutos": 10,
+   "intro": "Usen las palabras clave como piezas. Pueden usar todas o solo algunas, pero la definición debe sonar a ustedes, no a diccionario.",
+   "introSimple": "Usen estas palabras para explicar qué es la deontología. Máximo 26 palabras.",
+   "clavesTitulo": "Palabras clave",
+   "claves": [
+    {
+     "palabra": "Deber",
+     "raiz": [
+      "deber"
+     ],
+     "glosa": "Lo que debo hacer aunque no me convenga."
+    },
+    {
+     "palabra": "Ley",
+     "raiz": [
+      "ley"
+     ],
+     "glosa": "Una regla que obliga a todos por igual."
+    },
+    {
+     "palabra": "Universal",
+     "raiz": [
+      "universal"
+     ],
+     "glosa": "Válido para cualquier persona, en cualquier lugar."
+    },
+    {
+     "palabra": "Respeto",
+     "raiz": [
+      "respet"
+     ],
+     "glosa": "Tratar a la persona como fin, nunca solo como medio."
+    },
+    {
+     "palabra": "Racionalidad",
+     "raiz": [
+      "racional",
+      "razon"
+     ],
+     "glosa": "La razón, no el gusto, decide qué es correcto."
+    },
+    {
+     "palabra": "Obligación",
+     "raiz": [
+      "obliga"
+     ],
+     "glosa": "El vínculo que me ata a cumplir el deber."
+    }
+   ],
+   "cita": "«El deber es la necesidad de una acción por respeto a la ley». <br><small>Kant, <i>Fundamentación de la metafísica de las costumbres</i> (1785/1993)</small>",
+   "fichaTitulo": "Su definición",
+   "campos": [
+    {
+     "tipo": "text",
+     "k": "pareja",
+     "label": "Integrantes de la pareja",
+     "hint": "Nombre de los dos. Cada quien registra su nombre arriba para enviar."
+    },
+    {
+     "tipo": "palabras",
+     "k": "definicion",
+     "min": 20,
+     "max": 26,
+     "meta": 23,
+     "minClaves": 0,
+     "claves": [
+      {
+       "palabra": "Deber",
+       "raiz": [
+        "deber"
+       ],
+       "glosa": "Lo que debo hacer aunque no me convenga."
+      },
+      {
+       "palabra": "Ley",
+       "raiz": [
+        "ley"
+       ],
+       "glosa": "Una regla que obliga a todos por igual."
+      },
+      {
+       "palabra": "Universal",
+       "raiz": [
+        "universal"
+       ],
+       "glosa": "Válido para cualquier persona, en cualquier lugar."
+      },
+      {
+       "palabra": "Respeto",
+       "raiz": [
+        "respet"
+       ],
+       "glosa": "Tratar a la persona como fin, nunca solo como medio."
+      },
+      {
+       "palabra": "Racionalidad",
+       "raiz": [
+        "racional",
+        "razon"
+       ],
+       "glosa": "La razón, no el gusto, decide qué es correcto."
+      },
+      {
+       "palabra": "Obligación",
+       "raiz": [
+        "obliga"
+       ],
+       "glosa": "El vínculo que me ata a cumplir el deber."
+      }
+     ],
+     "label": "Para nosotros, la deontología es…",
+     "hint": "Escríbanla entre los dos. Exactamente 23 palabras es la meta; se acepta de 20 a 26. El contador las cuenta por ustedes."
+    },
+    {
+     "tipo": "text",
+     "k": "descartada",
+     "label": "Una palabra clave que decidimos no usar, y por qué",
+     "hint": "Decidir qué se queda fuera también es pensar."
+    }
+   ]
+  },
+  {
+   "tipo": "ia",
+   "titulo": "El examinador de la ley universal",
+   "nav": "Examen con IA",
+   "tiempo": "10 min · con IA · opcional",
+   "intro": "La IA hará de examinador kantiano: va a probar su definición contra casos concretos. Máximo cuatro rondas.",
+   "introSimple": "La IA hace preguntas difíciles sobre su definición. Respondan con razones.",
+   "voces": [
+    {
+     "nombre": "Lo que hará",
+     "texto": "Aplicar su definición a la cartera y al examen, y buscar huecos."
+    },
+    {
+     "nombre": "Lo que no hará",
+     "texto": "Escribir la definición por ustedes ni decirles cuál es la correcta."
+    }
+   ],
+   "aviso": "En la tercera ronda el examinador traerá una <b>crítica de Levinas</b>: las reglas universales pueden ignorar el sufrimiento de una persona concreta. Ahí decidirán si ajustan su definición.",
+   "gateTexto": "Completen la Fase 1 (definición de 20 a 26 palabras) para habilitar el examen.",
+   "requeridos": [
+    "definicion"
+   ],
+   "plataforma": {
+    "nombre": "ChatGPT",
+    "url": "https://chatgpt.com/"
+   },
+   "prompt": [
+    "Actúa como un examinador kantiano en una clase universitaria de Ética Profesional. Somos una pareja de estudiantes.",
+    "",
+    "Al final de este mensaje está la definición de deontología que escribimos sin IA, con entre 20 y 26 palabras.",
+    "",
+    "FORMATO: texto claro, párrafos cortos, una sola pregunta por ronda. No uses audio.",
+    "",
+    "Reglas:",
+    "1. Empieza diciendo en una frase qué idea central reconoces en nuestra definición. Después pregúntanos cómo resolvería, con esa definición, este caso: encontramos una cartera con dinero e identificación, nadie nos vio y no nos alcanza para comer.",
+    "2. En la segunda ronda aplica la prueba del imperativo categórico: pregúntanos si nuestra definición distingue entre actuar por deber y actuar por conveniencia o por miedo a ser descubiertos.",
+    "3. En la tercera ronda presenta la crítica de Emmanuel Levinas: la ética empieza en la responsabilidad ante el rostro del Otro, y una regla universal puede ignorar el sufrimiento de una persona concreta. Pregúntanos si nuestra definición deja lugar para esa persona.",
+    "4. En la cuarta ronda pídenos reescribir la definición con 23 palabras (se aceptan de 20 a 26). No la escribas tú, no sugieras frases ni palabras para completarla, y no digas cuál versión es correcta.",
+    "5. Cierra preguntando qué palabra de nuestra definición cambió más y por qué."
+   ],
+   "opcional": "ia"
+  },
+  {
+   "tipo": "entrega",
+   "titulo": "Fase 2 · Mi decálogo personal",
+   "nav": "Fase 2",
+   "tiempo": "12 min · sin IA",
+   "minutos": 12,
+   "intro": "Individual. Usa las preguntas guía como punto de partida: no hay que responderlas todas, sirven para encontrar tus reglas. Al terminar, envía tu trabajo.",
+   "introSimple": "Solo. Lee las preguntas y escribe 10 reglas. Después envía.",
+   "recursosTitulo": "Preguntas guía",
+   "recursos": [
+    {
+     "titulo": "1 · Mi deber profesional",
+     "html": "¿Qué le debo a quien recibe mi trabajo, aunque nadie me supervise? ¿Qué haría siempre, aunque me costara tiempo o dinero?"
+    },
+    {
+     "titulo": "2 · La prueba universal",
+     "html": "Si todos los profesionales de mi área siguieran esta regla, ¿el mundo funcionaría mejor o se volvería imposible?"
+    },
+    {
+     "titulo": "3 · Mis valores morales",
+     "html": "¿Qué valor no negociaría ni con mi jefe ni con un cliente? ¿Qué nunca haría, aunque fuera legal?"
+    },
+    {
+     "titulo": "4 · Mis metas personales",
+     "html": "¿Qué tipo de profesional quiero ser en diez años? ¿Qué regla me ayuda a llegar ahí sin pasar por encima de nadie?"
+    },
+    {
+     "titulo": "5 · El Otro (Levinas)",
+     "html": "¿A quién podría dañar mi regla si la aplico sin mirar a la persona concreta que tengo enfrente?"
+    }
+   ],
+   "campos": [
+    {
+     "tipo": "lista",
+     "k": "decalogo",
+     "n": 10,
+     "item": "Regla",
+     "label": "Mi decálogo personal",
+     "hint": "Diez reglas cortas, cada una empezando con un verbo: «Siempre…», «Nunca…», «Reconozco…».",
+     "placeholders": [
+      "Siempre…",
+      "Nunca…"
+     ]
+    },
+    {
+     "tipo": "textarea",
+     "k": "dificil",
+     "label": "La regla de mi decálogo que más me costaría cumplir, y por qué"
+    },
+    {
+     "tipo": "palabras",
+     "k": "definicion_final",
+     "min": 20,
+     "max": 26,
+     "meta": 23,
+     "minClaves": 0,
+     "claves": [
+      {
+       "palabra": "Deber",
+       "raiz": [
+        "deber"
+       ],
+       "glosa": "Lo que debo hacer aunque no me convenga."
+      },
+      {
+       "palabra": "Ley",
+       "raiz": [
+        "ley"
+       ],
+       "glosa": "Una regla que obliga a todos por igual."
+      },
+      {
+       "palabra": "Universal",
+       "raiz": [
+        "universal"
+       ],
+       "glosa": "Válido para cualquier persona, en cualquier lugar."
+      },
+      {
+       "palabra": "Respeto",
+       "raiz": [
+        "respet"
+       ],
+       "glosa": "Tratar a la persona como fin, nunca solo como medio."
+      },
+      {
+       "palabra": "Racionalidad",
+       "raiz": [
+        "racional",
+        "razon"
+       ],
+       "glosa": "La razón, no el gusto, decide qué es correcto."
+      },
+      {
+       "palabra": "Obligación",
+       "raiz": [
+        "obliga"
+       ],
+       "glosa": "El vínculo que me ata a cumplir el deber."
+      }
+     ],
+     "label": "Nuestra definición final, después del examen",
+     "hint": "Escríbanla entre los dos. Exactamente 23 palabras es la meta; se acepta de 20 a 26. El contador las cuenta por ustedes.",
+     "soloSi": "ia"
+    },
+    {
+     "tipo": "text",
+     "k": "enlace",
+     "label": "Enlace de la conversación",
+     "placeholder": "https://chatgpt.com/share/…",
+     "soloSi": "ia",
+     "hint": "En ChatGPT: Compartir → Copiar enlace."
+    }
+   ],
+   "requeridos": [
+    "definicion",
+    "decalogo",
+    "dificil",
+    "definicion_final",
+    "enlace"
+   ],
+   "boton": "Enviar mi trabajo",
+   "rubrica": {
+    "titulo": "Cómo se evalúa · 4 dimensiones, 16 puntos",
+    "encabezados": [
+     "Dimensión",
+     "Nivel 4 · Avanzado"
+    ],
+    "filas": [
+     [
+      "Definición",
+      "Integra el deber, la universalidad y el respeto en 20 a 26 palabras propias, sin copiar la cita de Kant."
+     ],
+     [
+      "Prueba universal",
+      "Aplica la definición a un caso concreto y distingue deber de conveniencia."
+     ],
+     [
+      "Crítica y ajuste",
+      "Responde a la crítica de Levinas y justifica si ajustan o mantienen la definición."
+     ],
+     [
+      "Decálogo",
+      "Diez reglas accionables, coherentes con su definición y con su futuro ejercicio profesional."
+     ]
+    ],
+    "nota": "La conversión a calificación corresponde al programa institucional."
+   },
+   "rubricaSin": {
+    "ia": {
+     "titulo": "Cómo se evalúa · 4 dimensiones, 16 puntos",
+     "encabezados": [
+      "Dimensión",
+      "Nivel 4 · Avanzado"
+     ],
+     "filas": [
+      [
+       "Definición",
+       "Integra el deber, la universalidad y el respeto en 20 a 26 palabras propias, sin copiar la cita de Kant."
+      ],
+      [
+       "Prueba universal",
+       "Identifica en la apertura una decisión propia que no resistiría ser ley para todos y explica por qué."
+      ],
+      [
+       "Decálogo",
+       "Diez reglas accionables, formuladas como deberes y no como deseos, ligadas a su futuro ejercicio profesional."
+      ],
+      [
+       "Coherencia y reflexión",
+       "Las reglas son coherentes con su definición y reconoce con honestidad cuál le costaría más cumplir."
+      ]
+     ],
+     "nota": "La conversión a calificación corresponde al programa institucional."
+    }
+   }
+  }
+ ],
+ "ficha": [
+  "NUESTRA DEFINICIÓN (sin IA)",
+  "Pareja: {pareja}",
+  "Definición: {definicion}",
+  "Palabra clave descartada: {descartada}",
+  "",
+  "MI DECÁLOGO{decalogo}"
+ ],
+ "pedirMatricula": false,
+ "opcionales": {
+  "ia": {
+   "nombre": "Examen con IA (paso 3)",
+   "porDefecto": false
+  }
+ }
+}
