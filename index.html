@@ -52,7 +52,7 @@ body.bv .card{border-color:#fff}
     var html = '';
     Object.keys(by).forEach(function (a) {
       html += '<h2 class="as">' + a + '</h2><div class="grid">' + by[a].map(function (m) {
-        return '<a class="card" href="' + m.id + '/"><div class="t">' + m.titulo + '</div><div class="p">' + m.programa + (m.grupos ? ' · ' + m.grupos : '') + '</div><div class="c">' + m.caso + '</div></a>';
+        return '<a class="card" href="' + (m.url || m.id + '/') + '"><div class="t">' + m.titulo + '</div><div class="p">' + m.programa + (m.grupos ? ' · ' + m.grupos : '') + '</div><div class="c">' + m.caso + '</div></a>';
       }).join('') + '</div>';
     });
     document.getElementById('lista').innerHTML = html;

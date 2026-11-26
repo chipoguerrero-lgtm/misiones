@@ -52,5 +52,23 @@
     "nombre": "AI examination (step 3)"
    }
   ]
+ },
+ {
+  "id": "campus-mission",
+  "url": "https://chipoguerrero-lgtm.github.io/campus-mission/",
+  "titulo": "Campus Mission",
+  "asignatura": "Actividades por equipos · Tutoring for Immersion",
+  "programa": "New students · 10 teams",
+  "grupos": "",
+  "caso": "Find your building, post your photo and explore it"
+ },
+ {
+  "id": "sustainability-mission",
+  "url": "https://chipoguerrero-lgtm.github.io/sustainability-mission/",
+  "titulo": "Sustainability Mission · Good practices",
+  "asignatura": "Actividades por equipos · Tutoring for Immersion",
+  "programa": "9 teams · one good practice each",
+  "grupos": "",
+  "caso": "Research, interview and infographic"
  }
 ]
